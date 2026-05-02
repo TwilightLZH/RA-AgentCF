@@ -9,6 +9,7 @@ from recbole.model.loss import BPRLoss
 from recbole.utils import InputType
 import os.path as osp
 import os
+import re
 from agentverse.initialization import load_agent,  prepare_task_config
 from fuzzywuzzy import process
 from copy import deepcopy
@@ -60,7 +61,7 @@ class AgentCF(SequentialRecommender):
              'llm': {'model': self.config['embedding_model'], 'temperature': self.config['llm_temperature'],
                      'max_tokens': self.config['max_tokens'], 'llm_type': 'embedding',
                      'api_key_list': self.config['api_key_list'], 'current_key_idx': self.config['current_key_idx']},
-             'llm_chat': {'model': 'gpt-3.5-turbo-16k-0613', 'llm_type': 'gpt-3.5-turbo-16k-0613',
+             'llm_chat': {'model': self.config['chat_llm_model'], 'llm_type': self.config['chat_llm_type'],
                           'temperature': self.config['llm_temperature'], 'max_tokens': self.config['max_tokens_chat'],
                           'api_key_list': self.config['api_key_list']
                           ,'current_key_idx': self.config['current_key_idx']},
@@ -121,7 +122,7 @@ class AgentCF(SequentialRecommender):
              'prompt_template': self.config['system_prompt_template'],
              'llm' :{'model' :self.config['llm_model'] ,'llm_type' :self.config['llm_model'], 'temperature' :self.config['llm_temperature'] ,'max_tokens' :self.config['max_tokens']
                      ,'api_key_list' :self.config['api_key_list'] ,'current_key_idx': self.config['current_key_idx'], },
-             'llm_chat' :{'model' :'gpt-3.5-turbo-16k-0613' ,'llm_type' :'gpt-3.5-turbo-16k-0613'
+             'llm_chat' :{'model' :self.config['chat_llm_model'] ,'llm_type' :self.config['chat_llm_type']
                           ,'temperature' :self.config['llm_temperature_test']
                           ,'max_tokens' :self.config['max_tokens_chat'] ,'api_key_list' :self.config['api_key_list']
                           ,'current_key_idx': self.config['current_key_idx'] ,},
@@ -148,7 +149,7 @@ class AgentCF(SequentialRecommender):
                                    ,'temperature' :self.config['llm_temperature']
                                    ,'max_tokens' :self.config['max_tokens'] ,'api_key_list' :self.config['api_key_list']
                                    ,'current_key_idx': self.config['current_key_idx']},
-                           'llm_chat' :{'model' :'gpt-3.5-turbo-16k-0613' ,'llm_type' :'gpt-3.5-turbo-16k-0613'
+                           'llm_chat' :{'model' :self.config['chat_llm_model'] ,'llm_type' :self.config['chat_llm_type']
                                         ,'temperature' :self.config['llm_temperature']
                                         ,'max_tokens' :self.config['max_tokens_chat']
                                         ,'api_key_list' :self.config['api_key_list']
@@ -188,7 +189,7 @@ class AgentCF(SequentialRecommender):
                                  ,'temperature' :self.config['llm_temperature'] ,'max_tokens' :self.config['max_tokens']
                                  ,'api_key_list' :self.config['api_key_list']
                                  ,'current_key_idx': self.config['current_key_idx']},
-                         'llm_chat' :{'model' :'gpt-3.5-turbo-16k-0613' ,'llm_type' :'gpt-3.5-turbo-16k-0613'
+                         'llm_chat' :{'model' :self.config['chat_llm_model'] ,'llm_type' :self.config['chat_llm_type']
                                       ,'temperature' :self.config['llm_temperature']
                                       ,'max_tokens' :self.config['max_tokens_chat']
                                       ,'api_key_list' :self.config['api_key_list']
@@ -211,7 +212,7 @@ class AgentCF(SequentialRecommender):
                              ,'temperature' :self.config['llm_temperature'] ,'max_tokens' :self.config['max_tokens']
                              ,'api_key_list' :self.config['api_key_list']
                              ,'current_key_idx': self.config['current_key_idx']},
-                     'llm_chat' :{'model' :'gpt-3.5-turbo-16k-0613' ,'llm_type' :'gpt-3.5-turbo-16k-0613'
+                     'llm_chat' :{'model' :self.config['chat_llm_model'] ,'llm_type' :self.config['chat_llm_type']
                                   ,'temperature' :self.config['llm_temperature']
                                   ,'max_tokens' :self.config['max_tokens_chat']
                                   ,'api_key_list' :self.config['api_key_list']
@@ -231,7 +232,7 @@ class AgentCF(SequentialRecommender):
                                    ,'temperature' :self.config['llm_temperature']
                                    ,'max_tokens' :self.config['max_tokens'] ,'api_key_list' :self.config['api_key_list']
                                    ,'current_key_idx': self.config['current_key_idx']},
-                           'llm_chat' :{'model' :'gpt-3.5-turbo-16k-0613' ,'llm_type' :'gpt-3.5-turbo-16k-0613'
+                           'llm_chat' :{'model' :self.config['chat_llm_model'] ,'llm_type' :self.config['chat_llm_type']
                                         ,'temperature' :self.config['llm_temperature']
                                         ,'max_tokens' :self.config['max_tokens_chat']
                                         ,'api_key_list' :self.config['api_key_list']
@@ -258,7 +259,7 @@ class AgentCF(SequentialRecommender):
                                  ,'temperature' :self.config['llm_temperature'] ,'max_tokens' :self.config['max_tokens']
                                  ,'api_key_list' :self.config['api_key_list']
                                  ,'current_key_idx': self.config['current_key_idx']},
-                         'llm_chat' :{'model' :'gpt-3.5-turbo-16k-0613' ,'llm_type' :'gpt-3.5-turbo-16k-0613'
+                         'llm_chat' :{'model' :self.config['chat_llm_model'] ,'llm_type' :self.config['chat_llm_type']
                                       ,'temperature' :self.config['llm_temperature']
                                       ,'max_tokens' :self.config['max_tokens_chat']
                                       ,'api_key_list' :self.config['api_key_list']
@@ -293,7 +294,7 @@ class AgentCF(SequentialRecommender):
                                  ,'temperature' :self.config['llm_temperature'] ,'max_tokens' :self.config['max_tokens']
                                  ,'api_key_list' :self.config['api_key_list']
                                  ,'current_key_idx': self.config['current_key_idx']},
-                         'llm_chat' :{'model' :'gpt-3.5-turbo-16k-0613' ,'llm_type' :'gpt-3.5-turbo-16k-0613'
+                         'llm_chat' :{'model' :self.config['chat_llm_model'] ,'llm_type' :self.config['chat_llm_type']
                                       ,'temperature' :self.config['llm_temperature']
                                       ,'max_tokens' :self.config['max_tokens_chat']
                                       ,'api_key_list' :self.config['api_key_list']
@@ -861,23 +862,31 @@ class AgentCF(SequentialRecommender):
             ranking_result = []
             candidate_text = candidate_texts[i]
             matched_names = []
+            valid_rank_idx = 0
             for j, item_detail in enumerate(message):
+                item_detail = item_detail.strip()
                 if len(item_detail) < 1:
                     continue
                 if item_detail.endswith('candidate movies:'):
                     continue
+                if item_detail.lower().startswith('rank:'):
+                    item_detail = item_detail[len('rank:'):].strip()
                 pr = item_detail.find('. ')
                 if item_detail[:pr].isdigit():
                     item_name = item_detail[pr + 2:].strip()
                 else:
                     item_name = item_detail.strip()
+                if not re.search(r'[A-Za-z0-9]', item_name):
+                    continue
+                score_value = self.config['recall_budget'] - valid_rank_idx
+                valid_rank_idx += 1
 
                 if self.config['match_rule'] == 'exact':
                     for id, candidate_text_single in enumerate(candidate_text):
                         if candidate_text_single in item_name:
                             item_id = idxs[i, id]
                             if scores[i, item_id] > -5000.: break  # has been recommended
-                            scores[i, item_id] = self.config['recall_budget'] - j
+                            scores[i, item_id] = score_value
                             break
                 elif self.config['match_rule'] == 'fuzzy':
                     matched_name, sim_score = process.extractOne(item_name, candidate_text)
@@ -886,12 +895,7 @@ class AgentCF(SequentialRecommender):
                     item_id = idxs[i, matched_idx]
                     if scores[i, item_id] > -5000.: continue  # has been recommended
                     ranking_result.append(self.item_id_token[item_id])
-                    scores[i, item_id] = self.config['recall_budget'] - j
+                    scores[i, item_id] = score_value
             all_recommendation_ranking_results.append(ranking_result)
         path = osp.join(self.config['record_path'], self.dataset_name, f'agentcf_ranking_result_{self.record_idx}.npy')
         np.save(path, np.array(all_recommendation_ranking_results))
-
-
-
-
-

@@ -133,7 +133,7 @@ class OpenAIEmbedding(BaseCompletionModel):
             try:
                 self.current_key_idx = (self.current_key_idx + 1) % len(self.api_key_list)
                 openai.api_key = self.api_key_list[self.current_key_idx]
-                response = [openai.Embedding.acreate(input=sentence, model="text-embedding-ada-002") for sentence in sentences]
+                response = [openai.Embedding.acreate(input=sentence, model=self.args.model) for sentence in sentences]
                 return await asyncio.gather(*response)
             except Exception as e:
                 if 'You exceeded your current quota, please check your plan and billing details.' in str(e) or 'The OpenAI account associated with this API key has been deactivated.' in str(e) :
@@ -148,8 +148,16 @@ class OpenAIEmbedding(BaseCompletionModel):
                 continue
 
 
-@llm_registry.register("gpt-3.5-turbo-16k-0613")
+@llm_registry.register("openai-chat")
+@llm_registry.register("gpt-5.5")
+@llm_registry.register("gpt-5.4")
+@llm_registry.register("gpt-5.4-mini")
+@llm_registry.register("gpt-5.4-nano")
+@llm_registry.register("gpt-4.1")
+@llm_registry.register("gpt-4.1-mini")
+@llm_registry.register("gpt-4.1-nano")
 @llm_registry.register("gpt-3.5-turbo")
+@llm_registry.register("gpt-3.5-turbo-16k-0613")
 @llm_registry.register("gpt-4")
 class OpenAIChat(BaseChatModel):
     args: OpenAIChatArgs = Field(default_factory=OpenAIChatArgs)

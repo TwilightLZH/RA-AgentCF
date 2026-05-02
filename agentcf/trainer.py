@@ -15,6 +15,15 @@ class LanguageLossTrainer(Trainer):
         self.fix_pos = config['fix_pos']                            # whether fix the position of ground-truth items in the candidate set, by default, -1
         self.user2sampled_item = self.load_selected_items(config, dataset)
 
+    def _debug_eval_batches(self):
+        value = getattr(self.config, 'final_config_dict', {}).get('debug_eval_batches')
+        if value in [None, '', False, 0, '0', 'None', 'none', '~']:
+            return None
+        value = int(value)
+        if value <= 0:
+            return None
+        return value
+
     def load_selected_items(self, config, dataset):
         sampled_item_file = os.path.join(config['data_path'], f'{config["dataset"]}.{self.sampled_user_suffix}')
         user_token2id = dataset.field2token_id['user_id']
@@ -55,6 +64,7 @@ class LanguageLossTrainer(Trainer):
             if show_progress
             else eval_data
         )
+        debug_eval_batches = self._debug_eval_batches()
         for batch_idx, batched_data in enumerate(iter_data):
             interaction, history_index, positive_u, positive_i = batched_data
             sampled_items = []
@@ -95,6 +105,9 @@ class LanguageLossTrainer(Trainer):
             self.eval_collector.eval_batch_collect(
                 scores, interaction, positive_u, positive_i
             )
+            if debug_eval_batches is not None and batch_idx + 1 >= debug_eval_batches:
+                self.logger.info(f'Stop evaluation early after {debug_eval_batches} batch(es) for debug_eval_batches.')
+                break
         self.eval_collector.model_collect(self.model)
         struct = self.eval_collector.get_data_struct()
         result = self.evaluator.evaluate(struct)
@@ -254,6 +267,7 @@ class ITEMLanguageLossTrainer(LanguageLossTrainer):
             if show_progress
             else eval_data
         )
+        debug_eval_batches = self._debug_eval_batches()
         for batch_idx, batched_data in enumerate(iter_data):
             interaction, history_index, positive_u, positive_i = batched_data
             sampled_items = []
@@ -295,6 +309,9 @@ class ITEMLanguageLossTrainer(LanguageLossTrainer):
             self.eval_collector.eval_batch_collect(
                 scores, interaction, positive_u, positive_i
             )
+            if debug_eval_batches is not None and batch_idx + 1 >= debug_eval_batches:
+                self.logger.info(f'Stop evaluation early after {debug_eval_batches} batch(es) for debug_eval_batches.')
+                break
         self.eval_collector.model_collect(self.model)
         struct = self.eval_collector.get_data_struct()
         result = self.evaluator.evaluate(struct)
