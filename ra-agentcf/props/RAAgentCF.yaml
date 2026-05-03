@@ -1,0 +1,29 @@
+# RA-AgentCF only stores the revenue-aware additions here.
+# The base AgentCF prompts, API keys, model names, and dataset settings are
+# loaded from ../agentcf/props/AgentCF.yaml and ../agentcf/props/{dataset}.yaml.
+
+data_path: ../agentcf/dataset/
+record_path: ../agentcf/dataset/
+max_his_len: 20
+MAX_ITEM_LIST_LENGTH: 20
+debug: False
+
+ra_enabled: True
+
+# Trade-off between AgentCF preference ranking and revenue-aware utility.
+# 0.0 means pure AgentCF, 1.0 means pure revenue utility.
+ra_alpha: 0.25
+
+# Expose revenue-aware signals to the LLM prompt, not only to post-processing.
+ra_inject_revenue_context: True
+
+# If no external revenue file is provided, a stable synthetic revenue profile
+# is generated from item ids plus item popularity. This keeps experiments
+# reproducible while the thesis data design is still evolving.
+ra_revenue_source: synthetic
+ra_revenue_file: ~
+ra_revenue_seed: 2026
+ra_revenue_min: 1.0
+ra_revenue_max: 10.0
+ra_popularity_weight: 0.25
+ra_revenue_risk_penalty: 0.20

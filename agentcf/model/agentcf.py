@@ -61,7 +61,8 @@ class AgentCF(SequentialRecommender):
              'prompt_template': '',
              'llm': {'model': self.config['embedding_model'], 'temperature': self.config['llm_temperature'],
                      'max_tokens': self.config['max_tokens'], 'llm_type': 'embedding',
-                     'api_key_list': self.config['api_key_list'], 'current_key_idx': self.config['current_key_idx']},
+                     'api_key_list': self.config['api_key_list'], 'current_key_idx': self.config['current_key_idx'],
+                     'api_base': self._optional_config('api_base')},
              'llm_chat': self._build_chat_llm_config(self.config['llm_temperature']),
              'agent_mode': 'embedding', 'output_parser_type': 'recommender',
 
@@ -118,7 +119,7 @@ class AgentCF(SequentialRecommender):
             {'agent_type':'recagent',
              'memory':[],
             'prompt_template': self.config['system_prompt_template'],
-            'llm':{'model':self.config['llm_model'],'llm_type':self.config['llm_model'], 'temperature':self.config['llm_temperature'],'max_tokens':self.config['max_tokens'],'api_key_list':self.config['api_key_list'],'current_key_idx': self.config['current_key_idx'], },
+            'llm':self._build_text_llm_config(self.config['llm_temperature']),
             'llm_chat':self._build_chat_llm_config(self.config['llm_temperature_test']),
             'agent_mode':'system','output_parser_type':'recommender',
             'system_prompt_template_backward': self.config['system_prompt_template_backward'],
@@ -133,6 +134,22 @@ class AgentCF(SequentialRecommender):
 
 
 
+    def _optional_config(self, key, default=None):
+        return getattr(self.config, 'final_config_dict', {}).get(key, default)
+
+
+    def _build_text_llm_config(self, temperature):
+        return {
+            'model': self.config['llm_model'],
+            'llm_type': self.config['llm_model'],
+            'temperature': temperature,
+            'max_tokens': self.config['max_tokens'],
+            'api_key_list': self.config['api_key_list'],
+            'current_key_idx': self.config['current_key_idx'],
+            'api_base': self._optional_config('api_base'),
+        }
+
+
     def _build_chat_llm_config(self, temperature):
         chat_llm_model = self.config['chat_llm_model']
         chat_llm_type = self.config['chat_llm_type'] or chat_llm_model
@@ -143,6 +160,7 @@ class AgentCF(SequentialRecommender):
             'max_tokens': self.config['max_tokens_chat'],
             'api_key_list': self.config['api_key_list'],
             'current_key_idx': self.config['current_key_idx'],
+            'api_base': self._optional_config('api_base'),
         }
 
 
@@ -150,7 +168,7 @@ class AgentCF(SequentialRecommender):
         user_context = {}
         user_context[0] = {'agent_type':'useragent', 'role_description':{'age': '[PAD]', 'user_gender': '[PAD]','user_occupation':'[PAD]'},'memory_1':['[PAD]'],'update_memory':['[PAD]'],
                      'role_description_string_1':'[PAD]','role_description_string_3':'[PAD]', 'role_task':'[PAD]','prompt_template': self.config['user_prompt_template'], 'user_prompt_system_role': self.config['user_prompt_system_role'],
-                     'llm':{'model':self.config['llm_model'],'llm_type':self.config['llm_model'],'temperature':self.config['llm_temperature'],'max_tokens':self.config['max_tokens'],'api_key_list':self.config['api_key_list'],'current_key_idx': self.config['current_key_idx']},
+                     'llm':self._build_text_llm_config(self.config['llm_temperature']),
                      'llm_chat':self._build_chat_llm_config(self.config['llm_temperature']),
                      'agent_mode':'user','output_parser_type':'useragent','historical_interactions':[], 'user_prompt_template_true': self.config['user_prompt_template_true']}
         feat_path = None
@@ -182,7 +200,7 @@ class AgentCF(SequentialRecommender):
                         'update_memory': [f' I am a {user_gender_des}. I am a {user_occupation_des}.',],
                         'prompt_template': self.config['user_prompt_template'],
 
-                        'llm':{'model':self.config['llm_model'],'llm_type':self.config['llm_model'],'temperature':self.config['llm_temperature'],'max_tokens':self.config['max_tokens'],'api_key_list':self.config['api_key_list'],'current_key_idx': self.config['current_key_idx']},
+                        'llm':self._build_text_llm_config(self.config['llm_temperature']),
                         'llm_chat':self._build_chat_llm_config(self.config['llm_temperature']),
                         'agent_mode':'user','output_parser_type':'useragent','historical_interactions':[], 'user_prompt_template_true': self.config['user_prompt_template_true']}
             return user_context
@@ -198,7 +216,7 @@ class AgentCF(SequentialRecommender):
                         'update_memory': [f' I enjoy listening to CDs very much.', ],
                         'prompt_template': self.config['user_prompt_template'],
 
-                        'llm':{'model':self.config['llm_model'],'llm_type':self.config['llm_model'],'temperature':self.config['llm_temperature'],'max_tokens':self.config['max_tokens'],'api_key_list':self.config['api_key_list'],'current_key_idx': self.config['current_key_idx']},
+                        'llm':self._build_text_llm_config(self.config['llm_temperature']),
                         'llm_chat':self._build_chat_llm_config(self.config['llm_temperature']),
                         'agent_mode':'user','output_parser_type':'useragent','historical_interactions':[], 'user_prompt_template_true': self.config['user_prompt_template_true']}
             return user_context
@@ -209,7 +227,7 @@ class AgentCF(SequentialRecommender):
         item_context = {}
         item_context[0] = {'agent_type':'itemagent', 'role_description':{'item_title': '[PAD]', 'item_release_year': '[PAD]','item_class':'[PAD]'},'memory':['[PAD]'],'memory_embedding':{},'update_memory':['[PAD]'], 'item_prompt_template_true': self.config['item_prompt_template_true'],
                      'role_description_string':'[PAD]', 'role_task':'[PAD]', 'prompt_template': self.config['user_prompt_template'],
-                     'llm':{'model':self.config['llm_model'],'llm_type':self.config['llm_model'],'temperature':self.config['llm_temperature'],'max_tokens':self.config['max_tokens'],'api_key_list':self.config['api_key_list'],'current_key_idx': self.config['current_key_idx']},
+                     'llm':self._build_text_llm_config(self.config['llm_temperature']),
                      'llm_chat':self._build_chat_llm_config(self.config['llm_temperature']),
                      'agent_mode':'user','output_parser_type':'itemagent'}
         feat_path = None
@@ -229,7 +247,7 @@ class AgentCF(SequentialRecommender):
                         'role_description':{'item_title': self.item_text[self.item_token_id[item_id]], 'item_class':item_class},
                         'role_description_string': role_description_string,
                         'prompt_template': self.config['item_prompt_template'],
-                        'llm':{'model':self.config['llm_model'],'llm_type':self.config['llm_model'],'temperature':self.config['llm_temperature'],'max_tokens':self.config['max_tokens'],'api_key_list':self.config['api_key_list'],'current_key_idx': self.config['current_key_idx']},
+                        'llm':self._build_text_llm_config(self.config['llm_temperature']),
                         'llm_chat':self._build_chat_llm_config(self.config['llm_temperature']),
                         'agent_mode':'item',
                          'item_prompt_template_true': self.config['item_prompt_template_true'],
@@ -257,7 +275,7 @@ class AgentCF(SequentialRecommender):
                         'role_description_string': role_description_string,
                         'prompt_template': self.config['item_prompt_template'],
                          'item_prompt_template_true': self.config['item_prompt_template_true'],
-                        'llm':{'model':self.config['llm_model'],'llm_type':self.config['llm_model'],'temperature':self.config['llm_temperature'],'max_tokens':self.config['max_tokens'],'api_key_list':self.config['api_key_list'],'current_key_idx': self.config['current_key_idx']},
+                        'llm':self._build_text_llm_config(self.config['llm_temperature']),
                         'llm_chat':self._build_chat_llm_config(self.config['llm_temperature']),
                         'agent_mode':'item',
                         'output_parser_type':'itemagent'}

@@ -28,6 +28,20 @@ else:
     is_openai_available = True
 
 
+def _resolve_api_base(api_base=None):
+    if api_base in [None, "", "~"]:
+        api_base = os.environ.get("api_base")
+    return api_base
+
+
+def _configure_openai(api_key=None, api_base=None):
+    if api_key is not None:
+        openai.api_key = api_key
+    api_base = _resolve_api_base(api_base)
+    if api_base:
+        openai.api_base = api_base
+
+
 class OpenAIChatArgs(BaseModelArgs):
     model: str = Field(default="gpt-3.5-turbo")
     max_tokens: int = Field(default=2048)
@@ -48,6 +62,7 @@ class OpenAICompletionArgs(OpenAIChatArgs):
 class OpenAICompletion(BaseCompletionModel):
     args: OpenAICompletionArgs = Field(default_factory=OpenAICompletionArgs)
     api_key_list: list = []
+    api_base: Optional[str] = None
     current_key_idx = 0
     def __init__(self, max_retry: int = 15, **kwargs):
         args = OpenAICompletionArgs()
@@ -59,9 +74,14 @@ class OpenAICompletion(BaseCompletionModel):
         #     logging.warning(f"Unused arguments: {kwargs}")
         super().__init__(args=args, max_retry=max_retry)
         self.api_key_list = kwargs.pop('api_key_list')
+        current_key_idx = kwargs.pop('current_key_idx', None)
+        if current_key_idx is not None:
+            self.current_key_idx = current_key_idx
+        self.api_base = _resolve_api_base(kwargs.pop('api_base', None))
         # self.current_api_idx = 0
 
     def generate_response(self, prompt: str) -> LLMResult:
+        _configure_openai(api_base=self.api_base)
         response = openai.Completion.create(prompt=prompt, **self.args.dict())
         return LLMResult(
             content=response["choices"][0]["text"],
@@ -74,7 +94,7 @@ class OpenAICompletion(BaseCompletionModel):
         while True:
             try:
                 self.current_key_idx = (self.current_key_idx + 1) % len(self.api_key_list)
-                openai.api_key = self.api_key_list[self.current_key_idx]
+                _configure_openai(self.api_key_list[self.current_key_idx], self.api_base)
                 response = await openai.Completion.acreate(prompt=prompt, **self.args.dict())
         # print(response)
                 return [i['text'] for i in response['choices']]
@@ -110,18 +130,24 @@ class OpenAICompletion(BaseCompletionModel):
 class OpenAIEmbedding(BaseCompletionModel):
     args: OpenAICompletionArgs = Field(default_factory=OpenAICompletionArgs)
     api_key_list: list = []
+    api_base: Optional[str] = None
     current_key_idx = 0
     def __init__(self, max_retry: int = 3, **kwargs):
         args = OpenAICompletionArgs()
         args = args.dict()
         for k, v in args.items():
             args[k] = kwargs.pop(k, v)
-        if len(kwargs) > 0:
-            logger.info(f"Unused arguments: {kwargs}")
         super().__init__(args=args, max_retry=max_retry)
         self.api_key_list = kwargs.pop('api_key_list')
+        current_key_idx = kwargs.pop('current_key_idx', None)
+        if current_key_idx is not None:
+            self.current_key_idx = current_key_idx
+        self.api_base = _resolve_api_base(kwargs.pop('api_base', None))
+        if len(kwargs) > 0:
+            logger.info(f"Unused arguments: {kwargs}")
 
     def generate_response(self, prompt: str) -> LLMResult:
+        _configure_openai(api_base=self.api_base)
         response = openai.Embedding.create(input=prompt, **self.args.dict())
         return LLMResult(
             content=response["data"][0]["embedding"],
@@ -132,7 +158,7 @@ class OpenAIEmbedding(BaseCompletionModel):
         while True:
             try:
                 self.current_key_idx = (self.current_key_idx + 1) % len(self.api_key_list)
-                openai.api_key = self.api_key_list[self.current_key_idx]
+                _configure_openai(self.api_key_list[self.current_key_idx], self.api_base)
                 response = [openai.Embedding.acreate(input=sentence, model=self.args.model) for sentence in sentences]
                 return await asyncio.gather(*response)
             except Exception as e:
@@ -162,6 +188,7 @@ class OpenAIEmbedding(BaseCompletionModel):
 class OpenAIChat(BaseChatModel):
     args: OpenAIChatArgs = Field(default_factory=OpenAIChatArgs)
     api_key_list: list = []
+    api_base: Optional[str] = None
     current_key_idx = 0
     def __init__(self, max_retry: int = 3, **kwargs):
         args = OpenAIChatArgs()
@@ -173,6 +200,10 @@ class OpenAIChat(BaseChatModel):
         #     logging.warning(f"Unused arguments: {kwargs}")
         super().__init__(args=args, max_retry=max_retry)
         self.api_key_list = kwargs.pop('api_key_list')
+        current_key_idx = kwargs.pop('current_key_idx', None)
+        if current_key_idx is not None:
+            self.current_key_idx = current_key_idx
+        self.api_base = _resolve_api_base(kwargs.pop('api_base', None))
 
     def _construct_messages(self, prompts: list):
         messages = []
@@ -186,6 +217,7 @@ class OpenAIChat(BaseChatModel):
     def generate_response(self, prompt: str) -> LLMResult:
         messages = self._construct_messages(prompt)
         try:
+            _configure_openai(api_base=self.api_base)
             response = openai.ChatCompletion.create(
                 messages=messages, **self.args.dict()
             )
@@ -203,7 +235,7 @@ class OpenAIChat(BaseChatModel):
         while True:
             try:
                 self.current_key_idx = (self.current_key_idx + 1) % len(self.api_key_list)
-                openai.api_key = self.api_key_list[self.current_key_idx]
+                _configure_openai(self.api_key_list[self.current_key_idx], self.api_base)
                 response = [openai.ChatCompletion.acreate(
                     messages = x, **self.args.dict()
                 ) for x in messages]
@@ -227,7 +259,7 @@ class OpenAIChat(BaseChatModel):
         while True:
             try:
                 self.current_key_idx = (self.current_key_idx + 1) % len(self.api_key_list)
-                openai.api_key = self.api_key_list[self.current_key_idx]
+                _configure_openai(self.api_key_list[self.current_key_idx], self.api_base)
                 response = [openai.ChatCompletion.acreate(
                     messages = x, **self.args.dict()
                 ) for x in messages]
