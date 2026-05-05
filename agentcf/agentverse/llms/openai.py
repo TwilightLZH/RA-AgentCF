@@ -179,6 +179,8 @@ class OpenAIEmbedding(BaseCompletionModel):
 @llm_registry.register("gpt-5.4")
 @llm_registry.register("gpt-5.4-mini")
 @llm_registry.register("gpt-5.4-nano")
+@llm_registry.register("gpt-5-mini")
+@llm_registry.register("gpt-5-nano")
 @llm_registry.register("gpt-4.1")
 @llm_registry.register("gpt-4.1-mini")
 @llm_registry.register("gpt-4.1-nano")

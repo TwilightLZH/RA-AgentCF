@@ -35,10 +35,10 @@ class RAAgentCFTrainer(LanguageLossTrainer):
             batched_data,
             sampled_items,
         )
-        self._collect_revenue_metrics(interaction, scores)
+        self._collect_revenue_metrics(interaction, scores, positive_i)
         return interaction, scores, positive_u, positive_i
 
-    def _collect_revenue_metrics(self, interaction, scores):
+    def _collect_revenue_metrics(self, interaction, scores, positive_i):
         if not hasattr(self.model, "revenue_profile"):
             return
 
@@ -50,15 +50,25 @@ class RAAgentCFTrainer(LanguageLossTrainer):
 
         for row_idx in range(top_items.shape[0]):
             user_id = int(interaction[self.model.USER_ID][row_idx])
+            user_token = self.model.user_id_token[user_id]
             user_description = self.model.user_agents[user_id].memory_1[-1]
+            user_profile = self.model.revenue_profile.user_profile(user_token)
+            target_item = int(positive_i[row_idx])
+            target_revenue = self.model.revenue_profile.raw(target_item)
             for k in topk:
                 item_ids = top_items[row_idx, :k].detach().cpu().tolist()
                 revenues = [self.model.revenue_profile.normalized(item_id) for item_id in item_ids]
                 utilities = [
-                    self.model.revenue_agent.score_candidate(item_id, user_description).utility
+                    self.model.revenue_agent.score_candidate(
+                        item_id,
+                        user_description,
+                        user_profile=user_profile,
+                    ).utility
                     for item_id in item_ids
                 ]
                 self._ra_metric_sums[f"revenue@{k}"] += sum(revenues) / len(revenues)
                 self._ra_metric_sums[f"utility@{k}"] += sum(utilities) / len(utilities)
+                hit = target_item in item_ids
+                self._ra_metric_sums[f"hit_revenue@{k}"] += target_revenue if hit else 0.0
+                self._ra_metric_sums[f"revenue_recall@{k}"] += 1.0 if hit and target_revenue > 0 else 0.0
             self._ra_metric_count += 1
-

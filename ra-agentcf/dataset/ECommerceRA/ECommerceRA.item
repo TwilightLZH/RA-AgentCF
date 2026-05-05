@@ -1,0 +1,995 @@
+item_id:token	title:token_seq	category:token_seq	brand:token	price:float	view_count:float	purchase_count:float
+1002524	Apple tool light #1002524	construction.tools.light	apple	568.8400	83	1
+1002525	Apple tool light #1002525	construction.tools.light	apple	658.9600	44	1
+1002540	Apple tool light #1002540	construction.tools.light	apple	419.5000	34	3
+1002544	Apple tool light #1002544	construction.tools.light	apple	408.4800	551	194
+1002545	Apple tool light #1002545	construction.tools.light	apple	514.5600	33	3
+1002547	Apple tool light #1002547	construction.tools.light	apple	411.4900	63	13
+1003308	Apple tool light #1003308	construction.tools.light	apple	617.7500	33	2
+1003312	Apple tool light #1003312	construction.tools.light	apple	734.8900	47	3
+1003333	Apple tool light #1003333	construction.tools.light	apple	424.2000	41	3
+1003499	Oneplus tool light #1003499	construction.tools.light	oneplus	424.4600	44	1
+1003712	Samsung tool light #1003712	construction.tools.light	samsung	508.3800	221	3
+1003943	Xiaomi tool light #1003943	construction.tools.light	xiaomi	198.1700	86	2
+1004082	BQ tool light #1004082	construction.tools.light	bq	51.9700	28	2
+1004174	TP-LINK tool light #1004174	construction.tools.light	tp-link	97.5300	32	3
+1004210	Samsung tool light #1004210	construction.tools.light	samsung	89.0400	46	2
+1004225	Apple tool light #1004225	construction.tools.light	apple	837.4450	36	10
+1004226	Apple tool light #1004226	construction.tools.light	apple	827.5300	321	97
+1004227	Apple tool light #1004227	construction.tools.light	apple	812.6100	101	11
+1004228	Apple tool light #1004228	construction.tools.light	apple	900.6400	24	1
+1004229	Apple tool light #1004229	construction.tools.light	apple	950.9200	65	14
+1004237	Apple tool light #1004237	construction.tools.light	apple	950.6000	49	1
+1004240	Apple tool light #1004240	construction.tools.light	apple	948.2850	52	6
+1004242	Apple tool light #1004242	construction.tools.light	apple	1106.2600	69	4
+1004247	Apple tool light #1004247	construction.tools.light	apple	848.6700	57	9
+1004249	Apple tool light #1004249	construction.tools.light	apple	763.9150	164	4
+1004252	Apple tool light #1004252	construction.tools.light	apple	786.2500	49	20
+1004255	Apple tool light #1004255	construction.tools.light	apple	772.1900	68	34
+1004258	Apple tool light #1004258	construction.tools.light	apple	770.1600	30	1
+1004259	Apple tool light #1004259	construction.tools.light	apple	848.6200	50	12
+1004321	Huawei tool light #1004321	construction.tools.light	huawei	270.2700	106	1
+1004322	Huawei tool light #1004322	construction.tools.light	huawei	270.2700	92	1
+1004353	Meizu tool light #1004353	construction.tools.light	meizu	205.6700	96	3
+1004402	Xiaomi tool light #1004402	construction.tools.light	xiaomi	151.8700	34	1
+1004565	Huawei tool light #1004565	construction.tools.light	huawei	164.3000	202	11
+1004566	Huawei tool light #1004566	construction.tools.light	huawei	165.3650	105	2
+1004653	Samsung tool light #1004653	construction.tools.light	samsung	595.8700	104	3
+1004659	Samsung tool light #1004659	construction.tools.light	samsung	686.7350	371	6
+1004672	Meizu tool light #1004672	construction.tools.light	meizu	123.3000	135	1
+1004682	Meizu tool light #1004682	construction.tools.light	meizu	246.8500	95	2
+1004708	Huawei tool light #1004708	construction.tools.light	huawei	161.1100	142	5
+1004709	Huawei tool light #1004709	construction.tools.light	huawei	151.8400	146	1
+1004720	Huawei tool light #1004720	construction.tools.light	huawei	127.6500	175	9
+1004723	Huawei tool light #1004723	construction.tools.light	huawei	128.4200	210	18
+1004748	Huawei tool light #1004748	construction.tools.light	huawei	127.1300	107	5
+1004749	Samsung tool light #1004749	construction.tools.light	samsung	222.8900	102	15
+1004756	Meizu tool light #1004756	construction.tools.light	meizu	84.4300	82	1
+1004766	Samsung tool light #1004766	construction.tools.light	samsung	249.1300	210	4
+1004767	Samsung tool light #1004767	construction.tools.light	samsung	252.2300	151	5
+1004768	Samsung tool light #1004768	construction.tools.light	samsung	250.0450	454	4
+1004781	Huawei tool light #1004781	construction.tools.light	huawei	272.3100	219	3
+1004785	Huawei tool light #1004785	construction.tools.light	huawei	272.8300	237	10
+1004813	Honor tool light #1004813	construction.tools.light	honor	231.3800	27	2
+1004835	Samsung tool light #1004835	construction.tools.light	samsung	199.7000	354	13
+1004836	Samsung tool light #1004836	construction.tools.light	samsung	201.1450	367	24
+1004838	OPPO tool light #1004838	construction.tools.light	oppo	162.3950	516	50
+1004850	Huawei tool light #1004850	construction.tools.light	huawei	564.2100	167	14
+1004856	Samsung tool light #1004856	construction.tools.light	samsung	133.5700	156	12
+1004857	Samsung tool light #1004857	construction.tools.light	samsung	126.6200	90	6
+1004858	Samsung tool light #1004858	construction.tools.light	samsung	127.2900	110	32
+1004870	Samsung tool light #1004870	construction.tools.light	samsung	269.7400	233	13
+1004873	Samsung tool light #1004873	construction.tools.light	samsung	356.7400	181	2
+1004874	Samsung tool light #1004874	construction.tools.light	samsung	384.3100	78	2
+1004886	OPPO tool light #1004886	construction.tools.light	oppo	128.1500	179	27
+1004887	OPPO tool light #1004887	construction.tools.light	oppo	126.0800	64	3
+1004888	Samsung tool light #1004888	construction.tools.light	samsung	198.5100	108	5
+1004901	OPPO tool light #1004901	construction.tools.light	oppo	486.6800	47	1
+1004903	Huawei tool light #1004903	construction.tools.light	huawei	115.0400	120	6
+1004904	Huawei tool light #1004904	construction.tools.light	huawei	115.0400	63	2
+1004905	Huawei tool light #1004905	construction.tools.light	huawei	113.4600	30	1
+1004931	Vivo tool light #1004931	construction.tools.light	vivo	283.1200	69	1
+1004957	Xiaomi tool light #1004957	construction.tools.light	xiaomi	292.9000	405	3
+1004958	Xiaomi tool light #1004958	construction.tools.light	xiaomi	293.4200	320	5
+1004961	OPPO tool light #1004961	construction.tools.light	oppo	164.2000	175	17
+1004990	OPPO smartphone #1004990	electronics.smartphone	oppo	257.3800	24	10
+1005002	Huawei tool light #1005002	construction.tools.light	huawei	205.3800	56	2
+1005003	Huawei tool light #1005003	construction.tools.light	huawei	230.1100	236	2
+1005004	Huawei tool light #1005004	construction.tools.light	huawei	205.3800	142	10
+1005007	Xiaomi tool light #1005007	construction.tools.light	xiaomi	117.1200	81	1
+1005008	Xiaomi tool light #1005008	construction.tools.light	xiaomi	122.2700	101	4
+1005014	Samsung tool light #1005014	construction.tools.light	samsung	440.0000	126	2
+1005017	Huawei tool light #1005017	construction.tools.light	huawei	102.6800	48	3
+1005018	Huawei tool light #1005018	construction.tools.light	huawei	102.6800	18	2
+1005023	Xiaomi tool light #1005023	construction.tools.light	xiaomi	372.7300	181	1
+1005065	Xiaomi tool light #1005065	construction.tools.light	xiaomi	231.6400	64	28
+1005066	Xiaomi tool light #1005066	construction.tools.light	xiaomi	278.0000	35	15
+1005073	Samsung tool light #1005073	construction.tools.light	samsung	1016.7600	39	1
+1005096	TP-LINK tool light #1005096	construction.tools.light	tp-link	123.2700	40	3
+1005098	Samsung tool light #1005098	construction.tools.light	samsung	145.1500	172	23
+1005099	Samsung tool light #1005099	construction.tools.light	samsung	145.1500	124	31
+1005100	Samsung tool light #1005100	construction.tools.light	samsung	148.4900	438	49
+1005104	Apple tool light #1005104	construction.tools.light	apple	937.0900	25	7
+1005105	Apple tool light #1005105	construction.tools.light	apple	1332.5100	99	8
+1005106	Apple tool light #1005106	construction.tools.light	apple	1425.5150	27	4
+1005109	Apple tool light #1005109	construction.tools.light	apple	924.9800	41	2
+1005112	Apple tool light #1005112	construction.tools.light	apple	938.7400	18	3
+1005115	Apple tool light #1005115	construction.tools.light	apple	936.6150	240	12
+1005116	Apple tool light #1005116	construction.tools.light	apple	1007.0250	161	2
+1005118	Apple tool light #1005118	construction.tools.light	apple	926.3600	71	1
+1005119	Apple tool light #1005119	construction.tools.light	apple	1002.3350	56	2
+1005121	Apple tool light #1005121	construction.tools.light	apple	922.6100	72	8
+1005122	Apple tool light #1005122	construction.tools.light	apple	974.6400	128	14
+1005124	Apple tool light #1005124	construction.tools.light	apple	1513.8550	62	4
+1005129	Apple tool light #1005129	construction.tools.light	apple	1311.4100	46	2
+1005133	Apple tool light #1005133	construction.tools.light	apple	1486.0600	33	1
+1005136	Apple tool light #1005136	construction.tools.light	apple	1939.5600	78	9
+1005139	Apple tool light #1005139	construction.tools.light	apple	1903.8950	34	2
+1005141	Apple tool light #1005141	construction.tools.light	apple	1660.2000	87	1
+1005142	Apple tool light #1005142	construction.tools.light	apple	1882.9300	80	15
+1005144	Apple tool light #1005144	construction.tools.light	apple	1631.6500	33	1
+1005145	Apple tool light #1005145	construction.tools.light	apple	1904.2700	22	3
+1005151	Xiaomi tool light #1005151	construction.tools.light	xiaomi	643.2600	41	3
+1005157	Xiaomi tool light #1005157	construction.tools.light	xiaomi	203.3400	35	2
+1005159	Xiaomi tool light #1005159	construction.tools.light	xiaomi	190.8400	428	14
+1005160	Xiaomi tool light #1005160	construction.tools.light	xiaomi	199.2300	880	111
+1005161	Xiaomi tool light #1005161	construction.tools.light	xiaomi	203.7000	200	2
+1005162	Xiaomi tool light #1005162	construction.tools.light	xiaomi	352.6900	24	2
+1005163	Xiaomi tool light #1005163	construction.tools.light	xiaomi	365.2600	130	5
+1005168	Samsung tool light #1005168	construction.tools.light	samsung	193.2600	182	17
+1005169	Samsung tool light #1005169	construction.tools.light	samsung	192.1400	351	30
+1005171	Samsung tool light #1005171	construction.tools.light	samsung	186.0800	118	18
+1005190	Vivo tool light #1005190	construction.tools.light	vivo	180.1600	66	3
+1005195	Xiaomi tool light #1005195	construction.tools.light	xiaomi	119.9300	125	3
+1005202	Honor tool light #1005202	construction.tools.light	honor	198.9500	30	2
+1005203	Xiaomi tool light #1005203	construction.tools.light	xiaomi	119.9300	381	9
+1005205	OPPO tool light #1005205	construction.tools.light	oppo	214.7800	347	18
+1005206	Honor tool light #1005206	construction.tools.light	honor	200.4900	58	1
+1005211	Samsung tool light #1005211	construction.tools.light	samsung	176.9800	170	25
+1005212	Samsung tool light #1005212	construction.tools.light	samsung	169.6100	322	9
+1005221	Xiaomi tool light #1005221	construction.tools.light	xiaomi	316.3500	177	1
+1005223	Xiaomi tool light #1005223	construction.tools.light	xiaomi	187.8600	712	21
+1005225	Samsung tool light #1005225	construction.tools.light	samsung	177.2750	118	12
+1005228	Honor tool light #1005228	construction.tools.light	honor	282.6100	65	1
+1005235	OPPO tool light #1005235	construction.tools.light	oppo	410.7700	152	4
+1005236	OPPO tool light #1005236	construction.tools.light	oppo	222.6050	122	6
+1005238	OPPO tool light #1005238	construction.tools.light	oppo	272.5700	295	5
+1005252	OPPO tool light #1005252	construction.tools.light	oppo	257.1200	338	14
+1005253	Xiaomi tool light #1005253	construction.tools.light	xiaomi	317.9000	606	25
+1005259	OPPO tool light #1005259	construction.tools.light	oppo	413.1100	54	1
+1005261	OPPO tool light #1005261	construction.tools.light	oppo	437.2100	62	4
+1005262	TP-LINK tool light #1005262	construction.tools.light	tp-link	149.0400	45	2
+1005263	OPPO tool light #1005263	construction.tools.light	oppo	617.4900	72	1
+1005264	Xiaomi tool light #1005264	construction.tools.light	xiaomi	180.8300	172	2
+1005265	Xiaomi tool light #1005265	construction.tools.light	xiaomi	182.7600	245	7
+1005266	Xiaomi tool light #1005266	construction.tools.light	xiaomi	148.7650	266	2
+1005267	Huawei tool light #1005267	construction.tools.light	huawei	295.4600	74	3
+1005273	Huawei tool light #1005273	construction.tools.light	huawei	127.3900	65	1
+1005284	Samsung tool light #1005284	construction.tools.light	samsung	2032.0850	82	2
+1005287	Xiaomi tool light #1005287	construction.tools.light	xiaomi	300.3300	275	2
+1005288	Xiaomi tool light #1005288	construction.tools.light	xiaomi	262.5600	56	1
+1201202	Lenovo slip-on shoes #1201202	apparel.shoes.slipons	lenovo	230.3400	28	1
+1201389	Apple slip-on shoes #1201389	apparel.shoes.slipons	apple	1028.3100	29	3
+1201466	Samsung slip-on shoes #1201466	apparel.shoes.slipons	samsung	254.8300	26	1
+1201505	Samsung slip-on shoes #1201505	apparel.shoes.slipons	samsung	179.9000	62	1
+1201559	BQ slip-on shoes #1201559	apparel.shoes.slipons	bq	71.2800	23	3
+1201565	Apple slip-on shoes #1201565	apparel.shoes.slipons	apple	395.0700	112	12
+1201566	Apple slip-on shoes #1201566	apparel.shoes.slipons	apple	405.1300	80	22
+1201567	Apple slip-on shoes #1201567	apparel.shoes.slipons	apple	405.3900	54	5
+1305362	Apple headphones #1305362	electronics.audio.headphone	apple	1055.3400	76	3
+1306686	Prestigio headphones #1306686	electronics.audio.headphone	prestigio	244.4600	78	8
+1306891	HP headphones #1306891	electronics.audio.headphone	hp	416.7400	34	7
+1306894	HP headphones #1306894	electronics.audio.headphone	hp	578.9100	50	3
+1306980	Acer headphones #1306980	electronics.audio.headphone	acer	514.5600	50	2
+1307135	HP headphones #1307135	electronics.audio.headphone	hp	332.0500	83	1
+1307156	Apple headphones #1307156	electronics.audio.headphone	apple	1352.6700	36	4
+1307186	HP headphones #1307186	electronics.audio.headphone	hp	991.0200	56	1
+1307187	Acer headphones #1307187	electronics.audio.headphone	acer	1078.5100	144	2
+1307240	Asus headphones #1307240	electronics.audio.headphone	asus	537.7200	33	1
+1307266	HP headphones #1307266	electronics.audio.headphone	hp	617.5200	85	1
+1307306	HP headphones #1307306	electronics.audio.headphone	hp	1258.4600	31	2
+1307310	Acer headphones #1307310	electronics.audio.headphone	acer	360.3400	99	2
+1307313	HP headphones #1307313	electronics.audio.headphone	hp	638.1100	94	1
+1307331	HP headphones #1307331	electronics.audio.headphone	hp	599.5000	206	3
+1307352	Acer headphones #1307352	electronics.audio.headphone	acer	514.2700	116	1
+1307370	Acer headphones #1307370	electronics.audio.headphone	acer	346.9600	106	1
+1307401	Asus headphones #1307401	electronics.audio.headphone	asus	415.1500	144	1
+1307433	Lenovo headphones #1307433	electronics.audio.headphone	lenovo	493.9600	86	1
+1307520	Lenovo headphones #1307520	electronics.audio.headphone	lenovo	833.9700	220	6
+1307526	Asus headphones #1307526	electronics.audio.headphone	asus	926.6400	81	2
+1307544	Lenovo headphones #1307544	electronics.audio.headphone	lenovo	355.5900	39	1
+1307554	Lenovo headphones #1307554	electronics.audio.headphone	lenovo	318.9300	143	2
+1307555	Asus headphones #1307555	electronics.audio.headphone	asus	334.6000	383	6
+1307566	Acer headphones #1307566	electronics.audio.headphone	acer	419.1650	109	2
+1307568	Acer headphones #1307568	electronics.audio.headphone	acer	692.4200	93	5
+1307571	Acer headphones #1307571	electronics.audio.headphone	acer	1204.4100	106	1
+1307574	Acer headphones #1307574	electronics.audio.headphone	acer	488.8200	85	4
+1307582	Acer headphones #1307582	electronics.audio.headphone	acer	580.5600	17	1
+1307583	Acer headphones #1307583	electronics.audio.headphone	acer	1080.3100	216	1
+1307589	Acer headphones #1307589	electronics.audio.headphone	acer	308.6300	43	1
+1480252	Lenovo kitchen refrigerator #1480252	appliances.kitchen.refrigerators	lenovo	1209.5500	141	21
+1480257	Acer kitchen refrigerator #1480257	appliances.kitchen.refrigerators	acer	552.6300	160	1
+1500258	Epson toys #1500258	kids.toys	epson	272.5700	30	3
+1700652	Samsung personal massager #1700652	appliances.personal.massager	samsung	108.0900	108	2
+1701086	Iiyama personal massager #1701086	appliances.personal.massager	iiyama	241.9800	36	1
+1701452	LG personal massager #1701452	appliances.personal.massager	lg	95.2000	76	2
+1701572	Samsung personal massager #1701572	appliances.personal.massager	samsung	205.4100	22	1
+1801562	Sony personal massager #1801562	appliances.personal.massager	sony	707.8400	43	9
+1801592	Sony personal massager #1801592	appliances.personal.massager	sony	514.7900	17	1
+1801690	Samsung personal massager #1801690	appliances.personal.massager	samsung	384.2500	106	1
+1801704	Samsung personal massager #1801704	appliances.personal.massager	samsung	423.2800	125	18
+1801726	Harper personal massager #1801726	appliances.personal.massager	harper	240.8000	31	7
+1801739	Samsung personal massager #1801739	appliances.personal.massager	samsung	282.5800	51	3
+1801762	Artel personal massager #1801762	appliances.personal.massager	artel	185.2750	37	2
+1801806	Artel personal massager #1801806	appliances.personal.massager	artel	114.7100	44	1
+1801848	Tcl personal massager #1801848	appliances.personal.massager	tcl	283.1200	23	1
+1801849	Samsung personal massager #1801849	appliances.personal.massager	samsung	535.6400	31	3
+1801881	Samsung personal massager #1801881	appliances.personal.massager	samsung	521.4900	80	4
+1801882	Samsung personal massager #1801882	appliances.personal.massager	samsung	408.7350	51	2
+1801901	Samsung personal massager #1801901	appliances.personal.massager	samsung	615.9500	18	4
+1801904	Samsung personal massager #1801904	appliances.personal.massager	samsung	527.6800	33	3
+1801906	Tcl personal massager #1801906	appliances.personal.massager	tcl	267.7000	64	3
+1801967	LG personal massager #1801967	appliances.personal.massager	lg	437.5700	24	2
+1801975	LG personal massager #1801975	appliances.personal.massager	lg	931.7900	31	1
+1801978	LG personal massager #1801978	appliances.personal.massager	lg	432.6400	136	28
+1802005	LG personal massager #1802005	appliances.personal.massager	lg	373.7300	306	34
+1802007	LG personal massager #1802007	appliances.personal.massager	lg	565.2400	22	3
+1802012	LG personal massager #1802012	appliances.personal.massager	lg	601.0200	12	2
+1802019	LG personal massager #1802019	appliances.personal.massager	lg	987.3850	27	4
+1802021	Artel personal massager #1802021	appliances.personal.massager	artel	434.8900	23	1
+1802022	Samsung personal massager #1802022	appliances.personal.massager	samsung	484.2950	41	2
+1802026	Samsung personal massager #1802026	appliances.personal.massager	samsung	565.2600	60	23
+1802027	LG personal massager #1802027	appliances.personal.massager	lg	485.0700	70	1
+1802061	LG personal massager #1802061	appliances.personal.massager	lg	366.7650	229	10
+1802079	Tcl personal massager #1802079	appliances.personal.massager	tcl	566.0100	26	1
+1802101	Arg personal massager #1802101	appliances.personal.massager	arg	179.9000	52	1
+1802105	Arg personal massager #1802105	appliances.personal.massager	arg	205.9000	20	2
+1802116	LG personal massager #1802116	appliances.personal.massager	lg	1268.6050	19	2
+2400146	Hansa personal massager #2400146	appliances.personal.massager	hansa	102.9400	28	1
+2400648	Turbo personal massager #2400648	appliances.personal.massager	turbo	41.1600	43	1
+2500289	Bosch kitchen oven #2500289	appliances.kitchen.oven	bosch	308.8600	46	2
+2500566	Asel kitchen oven #2500566	appliances.kitchen.oven	asel	64.0900	58	1
+2500577	Electrolux kitchen oven #2500577	appliances.kitchen.oven	electrolux	359.8300	46	3
+2501195	Midea kitchen oven #2501195	appliances.kitchen.oven	midea	254.8000	27	4
+2501273	Hansa kitchen oven #2501273	appliances.kitchen.oven	hansa	226.4900	47	5
+2501275	Hansa kitchen oven #2501275	appliances.kitchen.oven	hansa	270.2500	36	1
+2501334	Hansa kitchen oven #2501334	appliances.kitchen.oven	hansa	288.2700	34	4
+2501335	Hansa kitchen oven #2501335	appliances.kitchen.oven	hansa	308.8600	35	2
+2501391	Midea kitchen oven #2501391	appliances.kitchen.oven	midea	313.5200	28	1
+2501589	Redmond kitchen oven #2501589	appliances.kitchen.oven	redmond	128.6800	50	2
+2501614	Redmond kitchen oven #2501614	appliances.kitchen.oven	redmond	127.1600	73	2
+2501637	Bosch kitchen oven #2501637	appliances.kitchen.oven	bosch	406.5400	48	1
+2501669	Maxwell kitchen oven #2501669	appliances.kitchen.oven	maxwell	59.1800	117	1
+2501751	Artel kitchen oven #2501751	appliances.kitchen.oven	artel	51.2200	134	2
+2501753	Artel kitchen oven #2501753	appliances.kitchen.oven	artel	51.2200	98	1
+2501796	Artel kitchen oven #2501796	appliances.kitchen.oven	artel	46.3100	37	1
+2501943	Artel kitchen oven #2501943	appliances.kitchen.oven	artel	63.8400	154	1
+2502011	Artel kitchen oven #2502011	appliances.kitchen.oven	artel	65.8700	132	1
+2502012	Artel kitchen oven #2502012	appliances.kitchen.oven	artel	56.5800	177	2
+2502058	Artel kitchen oven #2502058	appliances.kitchen.oven	artel	67.4400	40	1
+2502060	Artel kitchen oven #2502060	appliances.kitchen.oven	artel	67.4400	68	2
+2502184	Kitchen Oven #2502184	appliances.kitchen.oven	unknown	77.2000	86	2
+2502287	Asel kitchen oven #2502287	appliances.kitchen.oven	asel	77.2200	116	1
+2600843	Hansa general product #2600843	unknown category	hansa	411.8300	46	2
+2601413	Artel general product #2601413	unknown category	artel	150.8400	51	2
+2601811	Dauscher general product #2601811	unknown category	dauscher	463.0700	58	1
+2601936	Dauscher general product #2601936	unknown category	dauscher	514.7900	17	4
+2601987	Artel general product #2601987	unknown category	artel	254.2900	68	3
+2602092	Dauscher general product #2602092	unknown category	dauscher	202.3000	20	1
+2602206	Artel general product #2602206	unknown category	artel	190.2200	74	2
+2700120	Samsung kitchen refrigerator #2700120	appliances.kitchen.refrigerators	samsung	947.4900	24	1
+2700283	Pozis kitchen refrigerator #2700283	appliances.kitchen.refrigerators	pozis	270.2500	25	2
+2700588	Indesit kitchen refrigerator #2700588	appliances.kitchen.refrigerators	indesit	336.6600	58	1
+2700598	Indesit kitchen refrigerator #2700598	appliances.kitchen.refrigerators	indesit	331.5100	122	3
+2700609	Indesit kitchen refrigerator #2700609	appliances.kitchen.refrigerators	indesit	305.7700	65	6
+2700616	Indesit kitchen refrigerator #2700616	appliances.kitchen.refrigerators	indesit	406.6800	37	9
+2700619	Indesit kitchen refrigerator #2700619	appliances.kitchen.refrigerators	indesit	355.2000	48	1
+2700827	Kitchen Refrigerator #2700827	appliances.kitchen.refrigerators	unknown	313.3800	36	1
+2700856	Indesit kitchen refrigerator #2700856	appliances.kitchen.refrigerators	indesit	383.5100	100	1
+2700984	Samsung kitchen refrigerator #2700984	appliances.kitchen.refrigerators	samsung	573.7300	89	3
+2701289	Samsung kitchen refrigerator #2701289	appliances.kitchen.refrigerators	samsung	886.2200	44	5
+2701305	Samsung kitchen refrigerator #2701305	appliances.kitchen.refrigerators	samsung	518.9100	152	8
+2701306	Samsung kitchen refrigerator #2701306	appliances.kitchen.refrigerators	samsung	505.5200	86	3
+2701416	Kitchen Refrigerator #2701416	appliances.kitchen.refrigerators	unknown	234.6400	49	7
+2701430	Kitchen Refrigerator #2701430	appliances.kitchen.refrigerators	unknown	225.6200	50	9
+2701431	Kitchen Refrigerator #2701431	appliances.kitchen.refrigerators	unknown	265.3600	43	4
+2701638	Indesit kitchen refrigerator #2701638	appliances.kitchen.refrigerators	indesit	336.4300	51	5
+2701642	Indesit kitchen refrigerator #2701642	appliances.kitchen.refrigerators	indesit	320.7000	95	28
+2701650	Indesit kitchen refrigerator #2701650	appliances.kitchen.refrigerators	indesit	334.5600	33	2
+2701657	Beko kitchen refrigerator #2701657	appliances.kitchen.refrigerators	beko	252.2300	77	1
+2701659	Bosch kitchen refrigerator #2701659	appliances.kitchen.refrigerators	bosch	460.5000	138	1
+2701667	Kitchen Refrigerator #2701667	appliances.kitchen.refrigerators	unknown	302.9700	34	3
+2701680	Beko kitchen refrigerator #2701680	appliances.kitchen.refrigerators	beko	396.3800	96	2
+2701703	Bosch kitchen refrigerator #2701703	appliances.kitchen.refrigerators	bosch	586.8600	42	1
+2701705	Bosch kitchen refrigerator #2701705	appliances.kitchen.refrigerators	bosch	517.3400	150	2
+2701706	Samsung kitchen refrigerator #2701706	appliances.kitchen.refrigerators	samsung	701.6600	25	1
+2701880	Beko kitchen refrigerator #2701880	appliances.kitchen.refrigerators	beko	311.4400	54	1
+2701887	Beko kitchen refrigerator #2701887	appliances.kitchen.refrigerators	beko	396.3800	76	1
+2701995	Samsung kitchen refrigerator #2701995	appliances.kitchen.refrigerators	samsung	689.5700	41	2
+2702050	LG kitchen refrigerator #2702050	appliances.kitchen.refrigerators	lg	464.7100	136	2
+2702277	LG kitchen refrigerator #2702277	appliances.kitchen.refrigerators	lg	462.7400	340	9
+2702280	LG kitchen refrigerator #2702280	appliances.kitchen.refrigerators	lg	733.0900	64	1
+2702309	Dauscher kitchen refrigerator #2702309	appliances.kitchen.refrigerators	dauscher	259.7200	97	4
+2702331	LG kitchen refrigerator #2702331	appliances.kitchen.refrigerators	lg	497.8000	395	120
+2702332	LG kitchen refrigerator #2702332	appliances.kitchen.refrigerators	lg	481.9650	191	2
+2702340	LG kitchen refrigerator #2702340	appliances.kitchen.refrigerators	lg	620.5200	120	6
+2702347	LG kitchen refrigerator #2702347	appliances.kitchen.refrigerators	lg	554.1300	111	3
+2702416	Dauscher kitchen refrigerator #2702416	appliances.kitchen.refrigerators	dauscher	900.9000	42	2
+2702421	Dauscher kitchen refrigerator #2702421	appliances.kitchen.refrigerators	dauscher	282.8900	26	1
+2702474	Indesit kitchen refrigerator #2702474	appliances.kitchen.refrigerators	indesit	296.2500	33	7
+2702546	Dauscher kitchen refrigerator #2702546	appliances.kitchen.refrigerators	dauscher	1090.6300	51	2
+2702563	Artel kitchen refrigerator #2702563	appliances.kitchen.refrigerators	artel	262.3000	48	5
+2702587	Midea kitchen refrigerator #2702587	appliances.kitchen.refrigerators	midea	270.1900	34	2
+2702628	Arg kitchen refrigerator #2702628	appliances.kitchen.refrigerators	arg	193.0300	69	1
+2800149	Atlantic kitchen refrigerator #2800149	appliances.kitchen.refrigerators	atlantic	218.7700	69	1
+2800399	Kitchen Refrigerator #2800399	appliances.kitchen.refrigerators	unknown	177.9100	25	3
+2800433	Haier kitchen refrigerator #2800433	appliances.kitchen.refrigerators	haier	270.2500	39	1
+2800475	Dauscher kitchen refrigerator #2800475	appliances.kitchen.refrigerators	dauscher	205.9000	21	1
+2800628	Kitchen Refrigerator #2800628	appliances.kitchen.refrigerators	unknown	223.9200	30	1
+2800630	Kitchen Refrigerator #2800630	appliances.kitchen.refrigerators	unknown	219.2600	49	1
+2900561	Midea bedroom blanket #2900561	furniture.bedroom.blanket	midea	48.0800	69	8
+2900957	Arg bedroom blanket #2900957	furniture.bedroom.blanket	arg	56.6000	43	1
+2900958	Arg bedroom blanket #2900958	furniture.bedroom.blanket	arg	54.0300	148	7
+2900992	Midea bedroom blanket #2900992	furniture.bedroom.blanket	midea	83.5000	38	1
+3100073	Bosch kitchen blender #3100073	appliances.kitchen.blender	bosch	110.2800	23	1
+3100074	Braun kitchen blender #3100074	appliances.kitchen.blender	braun	77.2000	56	1
+3100189	Braun kitchen blender #3100189	appliances.kitchen.blender	braun	100.3600	38	1
+3100640	Redmond kitchen blender #3100640	appliances.kitchen.blender	redmond	51.4600	57	1
+3100724	Philips kitchen blender #3100724	appliances.kitchen.blender	philips	154.4200	21	1
+3100828	Bosch kitchen blender #3100828	appliances.kitchen.blender	bosch	121.4950	64	2
+3100970	Redmond kitchen blender #3100970	appliances.kitchen.blender	redmond	51.4600	35	1
+3100972	Polaris kitchen blender #3100972	appliances.kitchen.blender	polaris	37.0700	45	3
+3200587	Polaris shoes keds #3200587	apparel.shoes.keds	polaris	81.0600	25	1
+3300371	Bosch components cooler #3300371	computers.components.cooler	bosch	195.6000	52	2
+3300533	Polaris components cooler #3300533	computers.components.cooler	polaris	50.0200	27	3
+3600163	Indesit kitchen washer #3600163	appliances.kitchen.washer	indesit	192.2600	31	1
+3601331	Samsung kitchen washer #3601331	appliances.kitchen.washer	samsung	373.2100	21	5
+3601402	LG kitchen washer #3601402	appliances.kitchen.washer	lg	449.1500	42	4
+3601437	LG kitchen washer #3601437	appliances.kitchen.washer	lg	405.3500	24	1
+3601446	LG kitchen washer #3601446	appliances.kitchen.washer	lg	437.3000	59	1
+3601448	LG kitchen washer #3601448	appliances.kitchen.washer	lg	418.2200	59	2
+3601479	Indesit kitchen washer #3601479	appliances.kitchen.washer	indesit	231.6400	38	1
+3601494	Beko kitchen washer #3601494	appliances.kitchen.washer	beko	275.4000	27	1
+3601505	Samsung kitchen washer #3601505	appliances.kitchen.washer	samsung	489.1750	28	2
+3601515	Samsung kitchen washer #3601515	appliances.kitchen.washer	samsung	628.0500	35	3
+3601522	LG kitchen washer #3601522	appliances.kitchen.washer	lg	306.2500	25	1
+3601537	Samsung kitchen washer #3601537	appliances.kitchen.washer	samsung	409.2800	65	1
+3700567	Thomas environment vacuum #3700567	appliances.environment.vacuum	thomas	244.5100	41	5
+3700677	Tefal environment vacuum #3700677	appliances.environment.vacuum	tefal	169.8600	26	2
+3700705	Artel environment vacuum #3700705	appliances.environment.vacuum	artel	75.2600	32	1
+3700715	Artel environment vacuum #3700715	appliances.environment.vacuum	artel	51.2200	46	1
+3700766	Samsung environment vacuum #3700766	appliances.environment.vacuum	samsung	121.6000	21	4
+3700832	LG environment vacuum #3700832	appliances.environment.vacuum	lg	113.0000	37	3
+3700869	Samsung environment vacuum #3700869	appliances.environment.vacuum	samsung	84.9200	71	2
+3701016	Tefal environment vacuum #3701016	appliances.environment.vacuum	tefal	145.4100	27	1
+3701056	Samsung environment vacuum #3701056	appliances.environment.vacuum	samsung	71.4600	21	1
+3701134	Bosch environment vacuum #3701134	appliances.environment.vacuum	bosch	110.6200	21	1
+3701218	Artel environment vacuum #3701218	appliances.environment.vacuum	artel	77.2000	43	1
+3701241	Redmond environment vacuum #3701241	appliances.environment.vacuum	redmond	243.7400	63	2
+3701268	Artel environment vacuum #3701268	appliances.environment.vacuum	artel	77.2000	24	3
+3701532	Artel environment vacuum #3701532	appliances.environment.vacuum	artel	53.5400	24	1
+3800762	Philips bathroom bath #3800762	furniture.bathroom.bath	philips	308.8600	67	2
+3800774	Philips bathroom bath #3800774	furniture.bathroom.bath	philips	295.9900	44	3
+3801134	Elenberg bathroom bath #3801134	furniture.bathroom.bath	elenberg	20.5700	29	3
+3801212	Philips bathroom bath #3801212	furniture.bathroom.bath	philips	360.3400	91	2
+3801233	Philips bathroom bath #3801233	furniture.bathroom.bath	philips	334.6000	60	2
+4000113	Polaris tools welding #4000113	construction.tools.welding	polaris	118.3800	20	1
+4100126	Sony shoes #4100126	apparel.shoes	sony	383.0200	25	1
+4100131	Sony shoes #4100131	apparel.shoes	sony	435.0200	26	2
+4100277	Sony shoes #4100277	apparel.shoes	sony	523.8000	37	2
+4100335	Microsoft shoes #4100335	apparel.shoes	microsoft	432.4200	49	1
+4200714	Almacom air conditioner #4200714	appliances.environment.air_conditioner	almacom	333.3900	100	1
+4200858	Midea air conditioner #4200858	appliances.environment.air_conditioner	midea	282.8900	33	1
+4200943	Electrolux air conditioner #4200943	appliances.environment.air_conditioner	electrolux	231.6400	61	2
+4201228	Tcl air conditioner #4201228	appliances.environment.air_conditioner	tcl	283.1300	32	1
+4201361	Midea air conditioner #4201361	appliances.environment.air_conditioner	midea	229.8600	86	2
+4201373	Beko air conditioner #4201373	appliances.environment.air_conditioner	beko	270.2800	16	4
+4201597	Midea air conditioner #4201597	appliances.environment.air_conditioner	midea	246.8500	57	1
+4201634	Midea air conditioner #4201634	appliances.environment.air_conditioner	midea	236.5600	91	3
+4300409	Polaris general product #4300409	unknown category	polaris	94.4700	37	1
+4300457	Polaris general product #4300457	unknown category	polaris	64.3300	24	1
+4501157	Gorenje kitchen hob #4501157	appliances.kitchen.hob	gorenje	280.5500	93	18
+4502106	Gorenje kitchen hob #4502106	appliances.kitchen.hob	gorenje	297.0200	67	3
+4502159	Hansa kitchen hob #4502159	appliances.kitchen.hob	hansa	108.0900	23	1
+4502473	Gorenje kitchen hob #4502473	appliances.kitchen.hob	gorenje	295.9900	45	2
+4600575	Hansa kitchen dishwasher #4600575	appliances.kitchen.dishwasher	hansa	347.2200	27	1
+4800730	Sony bicycle #4800730	sport.bicycle	sony	8.9800	58	2
+4802159	JBL bicycle #4802159	sport.bicycle	jbl	8.9800	69	8
+4802272	Samsung bicycle #4802272	sport.bicycle	samsung	7.4400	51	1
+4802801	JBL bicycle #4802801	sport.bicycle	jbl	30.1200	51	2
+4802974	Kingston bicycle #4802974	sport.bicycle	kingston	44.2200	24	1
+4803191	Xiaomi bicycle #4803191	sport.bicycle	xiaomi	15.1900	24	1
+4803637	Hyperx bicycle #4803637	sport.bicycle	hyperx	60.2800	20	2
+4803879	Xiaomi bicycle #4803879	sport.bicycle	xiaomi	81.0800	14	1
+4803894	JBL bicycle #4803894	sport.bicycle	jbl	51.2000	43	3
+4803948	Xiaomi bicycle #4803948	sport.bicycle	xiaomi	7.7000	21	1
+4803977	Samsung bicycle #4803977	sport.bicycle	samsung	92.1100	109	14
+4804056	Apple bicycle #4804056	sport.bicycle	apple	169.5500	189	25
+4804295	Xiaomi bicycle #4804295	sport.bicycle	xiaomi	28.0300	133	1
+4804660	Xiaomi bicycle #4804660	sport.bicycle	xiaomi	30.6300	187	6
+4804718	Apple bicycle #4804718	sport.bicycle	apple	326.8800	84	5
+4900386	Elenberg bedroom blanket #4900386	furniture.bedroom.blanket	elenberg	37.1800	24	1
+4900393	Scarlett bedroom blanket #4900393	furniture.bedroom.blanket	scarlett	94.9600	33	1
+5000015	Jaguar sewing machine #5000015	appliances.sewing_machine	jaguar	81.3400	19	1
+5000750	Janome sewing machine #5000750	appliances.sewing_machine	janome	257.3800	52	1
+5100343	Apple clocks #5100343	electronics.clocks	apple	334.3500	71	20
+5100376	Amazfit clocks #5100376	electronics.clocks	amazfit	73.8500	35	1
+5100562	Apple clocks #5100562	electronics.clocks	apple	295.6050	22	2
+5100719	Samsung clocks #5100719	electronics.clocks	samsung	154.4200	31	1
+5100722	Huawei clocks #5100722	electronics.clocks	huawei	128.6800	36	2
+5100816	Xiaomi shoes #5100816	apparel.shoes	xiaomi	30.8550	159	6
+5100833	Xiaomi shoes #5100833	apparel.shoes	xiaomi	6.6700	18	2
+5100855	Apple clocks #5100855	electronics.clocks	apple	565.4400	29	4
+5301764	Rowenta general product #5301764	unknown category	rowenta	692.4000	39	1
+5400104	Svc general product #5400104	unknown category	svc	35.7800	102	4
+5400110	Svc general product #5400110	unknown category	svc	35.7500	90	1
+5800160	JBL audio subwoofer #5800160	electronics.audio.subwoofer	jbl	64.3500	116	10
+5800616	Kicx audio subwoofer #5800616	electronics.audio.subwoofer	kicx	20.3400	26	1
+5800729	Kicx audio subwoofer #5800729	electronics.audio.subwoofer	kicx	31.6600	43	2
+6200242	Midea environment air heater #6200242	appliances.environment.air_heater	midea	15.4200	80	1
+6200514	Ballu environment air heater #6200514	appliances.environment.air_heater	ballu	15.4200	53	1
+6200935	Environment Air Heater #6200935	appliances.environment.air_heater	unknown	59.1300	90	1
+6200958	Environment Air Heater #6200958	appliances.environment.air_heater	unknown	19.2800	138	2
+6300680	Redmond camera photo #6300680	electronics.camera.photo	redmond	30.8600	37	1
+6300972	Bosch camera photo #6300972	electronics.camera.photo	bosch	58.7800	39	1
+6301123	Polaris camera photo #6301123	electronics.camera.photo	polaris	19.7700	75	2
+6301417	Tefal camera photo #6301417	electronics.camera.photo	tefal	55.3200	67	3
+6301657	Maxwell camera photo #6301657	electronics.camera.photo	maxwell	12.8400	19	1
+6301925	Bosch camera photo #6301925	electronics.camera.photo	bosch	90.0700	30	1
+6400290	Intel shoes step ins #6400290	apparel.shoes.step_ins	intel	328.7100	47	1
+6400313	Intel shoes step ins #6400313	apparel.shoes.step_ins	intel	213.2450	93	4
+6400333	Intel shoes step ins #6400333	apparel.shoes.step_ins	intel	90.2200	90	4
+6500562	Asus slip-on shoes #6500562	apparel.shoes.slipons	asus	51.4600	38	1
+6500801	Asrock slip-on shoes #6500801	apparel.shoes.slipons	asrock	129.2200	48	2
+6500951	Gigabyte slip-on shoes #6500951	apparel.shoes.slipons	gigabyte	161.0700	28	1
+6501005	Asrock slip-on shoes #6501005	apparel.shoes.slipons	asrock	126.4800	44	2
+6501014	Asrock slip-on shoes #6501014	apparel.shoes.slipons	asrock	101.1600	21	2
+6600702	Crucial slip-on shoes #6600702	apparel.shoes.slipons	crucial	47.5300	21	1
+6601031	Kingston slip-on shoes #6601031	apparel.shoes.slipons	kingston	54.5700	57	1
+6601032	Kingston slip-on shoes #6601032	apparel.shoes.slipons	kingston	64.0900	23	1
+6601125	Kingston slip-on shoes #6601125	apparel.shoes.slipons	kingston	54.5700	51	1
+6700457	Gigabyte environment air heater #6700457	appliances.environment.air_heater	gigabyte	178.8700	21	2
+6700458	Gigabyte environment air heater #6700458	appliances.environment.air_heater	gigabyte	187.6800	26	1
+6700485	Gigabyte environment air heater #6700485	appliances.environment.air_heater	gigabyte	179.9300	41	2
+6701183	Palit environment air heater #6701183	appliances.environment.air_heater	palit	354.9600	37	1
+6701185	Palit environment air heater #6701185	appliances.environment.air_heater	palit	197.9500	29	4
+6800218	Bosch camera photo #6800218	electronics.camera.photo	bosch	54.0300	60	2
+6800904	Samsung kitchen juicer #6800904	appliances.kitchen.juicer	samsung	107.8300	60	7
+6801036	Kingston kitchen juicer #6801036	appliances.kitchen.juicer	kingston	64.3300	47	3
+6801398	Kitchen Juicer #6801398	appliances.kitchen.juicer	unknown	92.4100	16	5
+7300056	Adata personal massager #7300056	appliances.personal.massager	adata	65.0100	41	1
+7300366	Seagate personal massager #7300366	appliances.personal.massager	seagate	64.3300	21	1
+7300440	Transcend personal massager #7300440	appliances.personal.massager	transcend	79.9800	17	3
+7600132	TP-LINK kitchen table #7600132	furniture.kitchen.table	tp-link	23.1500	58	3
+7600373	TP-LINK kitchen table #7600373	furniture.kitchen.table	tp-link	57.8900	54	2
+8000320	General Product #8000320	unknown category	unknown	52.9500	47	2
+8200532	Kitchen Grill #8200532	appliances.kitchen.grill	unknown	74.6500	31	1
+8300376	Shoes Step Ins #8300376	apparel.shoes.step_ins	unknown	26.5100	19	2
+8700031	Panasonic personal hair cutter #8700031	appliances.personal.hair_cutter	panasonic	36.2700	26	1
+8700233	Vitek personal hair cutter #8700233	appliances.personal.hair_cutter	vitek	25.7100	31	1
+8700327	Philips personal hair cutter #8700327	appliances.personal.hair_cutter	philips	38.5900	60	1
+8700331	Philips personal hair cutter #8700331	appliances.personal.hair_cutter	philips	36.0100	43	1
+8700398	Maxwell personal hair cutter #8700398	appliances.personal.hair_cutter	maxwell	10.2700	34	2
+8800093	Nokia camera video #8800093	electronics.camera.video	nokia	58.9500	21	1
+8800313	Nokia camera video #8800313	electronics.camera.video	nokia	40.9300	46	5
+8801100	Nokia camera video #8801100	electronics.camera.video	nokia	92.4100	30	1
+8902086	Ladida desktop #8902086	computers.desktop	ladida	46.8500	23	3
+9100033	Kitchen Table #9100033	furniture.kitchen.table	unknown	28.0300	40	1
+9100180	Kitchen Table #9100180	furniture.kitchen.table	unknown	21.8500	39	1
+9100458	Logitech kitchen table #9100458	furniture.kitchen.table	logitech	13.6200	39	7
+9101053	Xiaomi kitchen table #9101053	furniture.kitchen.table	xiaomi	15.4200	36	1
+9101164	Trust kitchen table #9101164	furniture.kitchen.table	trust	10.4000	49	1
+9101322	Canyon kitchen table #9101322	furniture.kitchen.table	canyon	3.0600	35	2
+9101663	Kitchen Table #9101663	furniture.kitchen.table	unknown	8.2100	22	1
+9200216	Scarf #9200216	apparel.scarf	unknown	25.4600	31	1
+9200489	Sven scarf #9200489	apparel.scarf	sven	23.1400	22	1
+9200568	Scarf #9200568	apparel.scarf	unknown	33.4400	22	1
+9200640	Defender scarf #9200640	apparel.scarf	defender	23.1400	44	2
+9300035	LG shoes #9300035	apparel.shoes	lg	180.1600	34	3
+9300037	LG shoes #9300037	apparel.shoes	lg	216.7400	39	1
+9500142	Genius scarf #9500142	apparel.scarf	genius	43.6800	38	2
+9700099	Thermaltake computer power supply #9700099	computers.components.power_supply	thermaltake	59.4100	56	5
+9700140	Huntkey computer power supply #9700140	computers.components.power_supply	huntkey	47.5900	64	3
+9700204	Thermaltake computer power supply #9700204	computers.components.power_supply	thermaltake	66.6700	56	1
+9700205	Thermaltake computer power supply #9700205	computers.components.power_supply	thermaltake	74.3900	31	2
+9700228	Aerocool computer power supply #9700228	computers.components.power_supply	aerocool	58.9500	28	1
+9700230	Aerocool computer power supply #9700230	computers.components.power_supply	aerocool	40.6700	50	2
+9700231	Aerocool computer power supply #9700231	computers.components.power_supply	aerocool	35.7800	37	1
+9700359	Deepcool computer power supply #9700359	computers.components.power_supply	deepcool	43.2400	46	4
+9700360	Deepcool computer power supply #9700360	computers.components.power_supply	deepcool	33.2100	20	1
+9800136	Thermaltake trainer #9800136	sport.trainer	thermaltake	53.5100	23	1
+9800232	Thermaltake trainer #9800232	sport.trainer	thermaltake	42.2100	26	1
+9800273	Aerocool trainer #9800273	sport.trainer	aerocool	34.5700	29	1
+9800480	Aerocool trainer #9800480	sport.trainer	aerocool	40.4000	89	5
+9800648	Huntkey trainer #9800648	sport.trainer	huntkey	61.5200	79	1
+10101352	Stiga kitchen chair #10101352	furniture.kitchen.chair	stiga	102.9400	28	1
+10301601	Scarf #10301601	apparel.scarf	unknown	5.1200	27	1
+10301632	Scarf #10301632	apparel.scarf	unknown	46.8200	40	1
+10501241	Mattel toys #10501241	kids.toys	mattel	12.6100	25	1
+10501376	Mattel toys #10501376	kids.toys	mattel	10.7100	23	1
+10501784	Mattel toys #10501784	kids.toys	mattel	58.1700	27	1
+10900338	Bosch kitchen mixer #10900338	appliances.kitchen.mixer	bosch	95.2100	42	2
+10900348	Kitfort kitchen mixer #10900348	appliances.kitchen.mixer	kitfort	123.5300	98	4
+11000006	Braun kitchen grill #11000006	appliances.kitchen.grill	braun	42.4500	24	1
+11100084	Maxwell bedroom blanket #11100084	furniture.bedroom.blanket	maxwell	17.9900	23	1
+11100287	Elenberg bedroom blanket #11100287	furniture.bedroom.blanket	elenberg	12.8400	39	1
+11200017	Prestigio swing #11200017	kids.swing	prestigio	23.4000	31	1
+11200367	Redmond swing #11200367	kids.swing	redmond	31.0200	30	1
+11200368	Redmond swing #11200368	kids.swing	redmond	31.1200	27	1
+11400622	Svc kitchen chair #11400622	furniture.kitchen.chair	svc	9.2400	20	1
+11400711	Canyon kitchen chair #11400711	furniture.kitchen.chair	canyon	10.2700	21	2
+11400745	Xiaomi kitchen chair #11400745	furniture.kitchen.chair	xiaomi	25.4800	20	1
+11500336	JBL computer power supply #11500336	computers.components.power_supply	jbl	384.8000	38	6
+11500440	Sven computer power supply #11500440	computers.components.power_supply	sven	15.4200	31	1
+11500625	Sony computer power supply #11500625	computers.components.power_supply	sony	30.2600	21	2
+11500708	JBL computer power supply #11500708	computers.components.power_supply	jbl	187.8800	31	7
+11500721	JBL computer power supply #11500721	computers.components.power_supply	jbl	192.7700	39	9
+11500839	JBL computer power supply #11500839	computers.components.power_supply	jbl	192.8000	22	5
+11500863	JBL computer power supply #11500863	computers.components.power_supply	jbl	125.1000	30	2
+11600000	Microlab kitchen kettle #11600000	appliances.kitchen.kettle	microlab	30.6000	44	2
+11600004	Sven kitchen kettle #11600004	appliances.kitchen.kettle	sven	43.4800	44	6
+11600114	Microlab kitchen kettle #11600114	appliances.kitchen.kettle	microlab	35.7800	22	1
+11600155	Microlab kitchen kettle #11600155	appliances.kitchen.kettle	microlab	30.8600	53	1
+11600301	Microlab kitchen kettle #11600301	appliances.kitchen.kettle	microlab	28.5400	31	1
+11600449	Sven kitchen kettle #11600449	appliances.kitchen.kettle	sven	87.2600	30	1
+11600468	Sven kitchen kettle #11600468	appliances.kitchen.kettle	sven	94.3300	20	4
+11900046	Kitchen Toaster #11900046	appliances.kitchen.toster	unknown	128.6600	33	1
+11900281	Kitchen Toaster #11900281	appliances.kitchen.toster	unknown	154.4200	23	4
+12100230	Xiaomi kitchen mixer #12100230	appliances.kitchen.mixer	xiaomi	718.1700	41	1
+12100430	Ninebot kitchen mixer #12100430	appliances.kitchen.mixer	ninebot	436.3000	43	1
+12200541	Phoenix kitchen toaster #12200541	appliances.kitchen.toster	phoenix	231.6400	80	3
+12200545	Phoenix kitchen toaster #12200545	appliances.kitchen.toster	phoenix	223.9200	58	9
+12201225	Trek kitchen toaster #12201225	appliances.kitchen.toster	trek	424.4600	27	2
+12201336	Torrent kitchen toaster #12201336	appliances.kitchen.toster	torrent	254.5800	33	2
+12201345	Phoenix kitchen toaster #12201345	appliances.kitchen.toster	phoenix	180.1600	48	10
+12201348	Phoenix kitchen toaster #12201348	appliances.kitchen.toster	phoenix	180.1600	25	2
+12201448	Axis kitchen toaster #12201448	appliances.kitchen.toster	axis	231.6700	22	1
+12201721	Torrent kitchen toaster #12201721	appliances.kitchen.toster	torrent	180.1600	85	1
+12202338	Torrent kitchen toaster #12202338	appliances.kitchen.toster	torrent	141.2900	26	1
+12202419	Gt kitchen toaster #12202419	appliances.kitchen.toster	gt	321.5000	18	2
+12300010	P.I.T. kitchen hood #12300010	appliances.kitchen.hood	p.i.t.	62.8100	29	1
+12300181	Dewalt kitchen hood #12300181	appliances.kitchen.hood	dewalt	432.4400	110	2
+12300192	Dewalt kitchen hood #12300192	appliances.kitchen.hood	dewalt	231.6500	60	7
+12300392	Kitchen Hood #12300392	appliances.kitchen.hood	unknown	47.3400	25	2
+12300396	Kitchen Hood #12300396	appliances.kitchen.hood	unknown	65.3600	104	1
+12300850	Kitchen Hood #12300850	appliances.kitchen.hood	unknown	27.5200	28	1
+12300915	Total kitchen hood #12300915	appliances.kitchen.hood	total	46.3100	22	1
+12301196	Kitchen Hood #12301196	appliances.kitchen.hood	unknown	96.2400	47	1
+12301394	Dewalt kitchen hood #12301394	appliances.kitchen.hood	dewalt	205.9100	83	3
+12400047	Dewalt audio microphone #12400047	electronics.audio.microphone	dewalt	167.3100	59	6
+12500002	Hyundai general product #12500002	unknown category	hyundai	30.8600	24	2
+12500153	Dwt general product #12500153	unknown category	dwt	34.7500	31	1
+12500330	Crown general product #12500330	unknown category	crown	44.5100	43	1
+12500527	Crown general product #12500527	unknown category	crown	46.2950	79	2
+12500537	Crown general product #12500537	unknown category	crown	45.5600	58	1
+12500639	P.I.T. general product #12500639	unknown category	p.i.t.	30.6500	35	1
+12500685	Stanley general product #12500685	unknown category	stanley	35.1100	22	1
+12500753	Alteco general product #12500753	unknown category	alteco	61.1300	45	1
+12600037	Redmond environment vacuum #12600037	appliances.environment.vacuum	redmond	77.2000	54	1
+12701992	Cordiant general product #12701992	unknown category	cordiant	40.9300	46	1
+12702530	General Product #12702530	unknown category	unknown	25.4800	33	1
+12705012	Cordiant general product #12705012	unknown category	cordiant	56.3700	21	1
+12705214	Viatti general product #12705214	unknown category	viatti	39.9000	31	3
+12705309	Cordiant general product #12705309	unknown category	cordiant	56.3700	30	3
+12713467	Cordiant general product #12713467	unknown category	cordiant	25.7400	37	1
+12800185	Transcend general product #12800185	unknown category	transcend	14.9000	51	2
+13000021	Sony shorts #13000021	apparel.shorts	sony	73.0800	27	1
+13000050	X-Game shorts #13000050	apparel.shorts	x-game	12.3700	32	1
+13000133	Defender shorts #13000133	apparel.shorts	defender	10.6700	26	2
+13200667	Bts bedroom bed #13200667	furniture.bedroom.bed	bts	203.0700	28	2
+13400621	Bts general product #13400621	unknown category	bts	74.3900	30	1
+14400047	Defender kitchen toaster #14400047	appliances.kitchen.toster	defender	5.1100	22	1
+14700660	Video Projector #14700660	electronics.video.projector	unknown	236.2700	43	6
+14700667	Video Projector #14700667	electronics.video.projector	unknown	187.3700	60	6
+14701015	Video Projector #14701015	electronics.video.projector	unknown	66.9300	29	1
+15100242	Ostamebel shorts #15100242	apparel.shorts	ostamebel	962.4400	40	9
+15200501	Bedroom Bed #15200501	furniture.bedroom.bed	unknown	46.3300	21	4
+15200509	Racer bedroom bed #15200509	furniture.bedroom.bed	racer	41.1900	31	6
+15200914	Bedroom Bed #15200914	furniture.bedroom.bed	unknown	58.1700	48	5
+15201141	Bedroom Bed #15201141	furniture.bedroom.bed	unknown	43.7600	30	16
+15300010	Samsung general product #15300010	unknown category	samsung	17.2200	49	3
+15300183	Transcend general product #15300183	unknown category	transcend	15.4200	91	1
+15300303	Transcend general product #15300303	unknown category	transcend	28.2900	36	1
+15300315	Transcend general product #15300315	unknown category	transcend	25.7200	48	1
+15700136	General Product #15700136	unknown category	unknown	293.1900	23	7
+15700176	Bts general product #15700176	unknown category	bts	257.1500	72	15
+15700204	General Product #15700204	unknown category	unknown	295.7600	42	3
+15800049	Huter trainer #15800049	sport.trainer	huter	134.6000	16	4
+15800120	Huter trainer #15800120	sport.trainer	huter	211.3100	45	1
+15900033	Tefal tools generator #15900033	construction.tools.generator	tefal	38.5900	19	1
+15900071	Polaris tools generator #15900071	construction.tools.generator	polaris	10.4300	28	2
+15900078	Polaris tools generator #15900078	construction.tools.generator	polaris	15.3000	24	1
+15900092	Polaris tools generator #15900092	construction.tools.generator	polaris	18.7900	50	1
+15900118	Tefal tools generator #15900118	construction.tools.generator	tefal	17.9900	25	1
+16000328	Polaris bag #16000328	accessories.bag	polaris	26.7400	24	1
+16000504	Bohemia bag #16000504	accessories.bag	bohemia	145.2300	30	1
+16000596	Polaris bag #16000596	accessories.bag	polaris	39.7300	25	1
+16000960	Dauscher shoes #16000960	apparel.shoes	dauscher	21.0600	25	1
+16000961	Granhel bag #16000961	accessories.bag	granhel	39.3800	35	1
+16001180	Rondell bag #16001180	accessories.bag	rondell	56.6000	24	3
+16101115	Tramontina kitchen kettle #16101115	appliances.kitchen.kettle	tramontina	6.0500	17	3
+16101130	Tramontina kitchen kettle #16101130	appliances.kitchen.kettle	tramontina	0.8200	28	1
+16300113	Trainer #16300113	sport.trainer	unknown	55.8300	51	1
+16400165	Verloni general product #16400165	unknown category	verloni	30.8600	48	1
+16400239	General Product #16400239	unknown category	unknown	172.9800	32	1
+16600001	Trainer #16600001	sport.trainer	unknown	76.9600	39	2
+16600003	Jinjianfeng trainer #16600003	sport.trainer	jinjianfeng	34.7500	25	4
+16600006	Trainer #16600006	sport.trainer	unknown	76.9600	58	3
+17300281	Montale shoes sandals #17300281	apparel.shoes.sandals	montale	102.1600	35	5
+17300749	Versace shoes sandals #17300749	apparel.shoes.sandals	versace	76.4200	13	8
+17300768	Shoes Sandals #17300768	apparel.shoes.sandals	unknown	59.2400	17	6
+17400135	Tools Painting #17400135	construction.tools.painting	unknown	4.5600	22	3
+17400210	Alerana tools painting #17400210	construction.tools.painting	alerana	11.5800	19	3
+17800009	Aerocool tablet #17800009	electronics.tablet	aerocool	250.5600	31	2
+17800043	Aerocool tablet #17800043	electronics.tablet	aerocool	227.4200	51	1
+17800089	Zeta tablet #17800089	electronics.tablet	zeta	64.3300	31	1
+17800752	Tablet #17800752	electronics.tablet	unknown	249.4000	24	1
+18300021	Portcase ski #18300021	sport.ski	portcase	10.2700	32	6
+18300141	Sumdex ski #18300141	sport.ski	sumdex	21.6000	69	16
+18300155	Lenovo ski #18300155	sport.ski	lenovo	12.8400	48	9
+19100206	Crown tool light #19100206	construction.tools.light	crown	64.3300	51	1
+19100276	Dewalt tool light #19100276	construction.tools.light	dewalt	141.5700	41	1
+19200039	Eurolux tools saw #19200039	construction.tools.saw	eurolux	65.0500	25	1
+19700095	Shirt #19700095	apparel.shirt	unknown	11.9400	21	1
+21403128	Zinvo clocks #21403128	electronics.clocks	zinvo	386.1100	20	3
+21403727	Clocks #21403727	electronics.clocks	unknown	181.7300	49	1
+21403834	Clocks #21403834	electronics.clocks	unknown	180.1800	32	1
+21405845	Casio clocks #21405845	electronics.clocks	casio	377.8700	48	1
+21405866	Casio clocks #21405866	electronics.clocks	casio	504.2600	43	1
+21406727	Clocks #21406727	electronics.clocks	unknown	535.4100	27	2
+21406774	Clocks #21406774	electronics.clocks	unknown	1595.9200	20	1
+21407374	Casio clocks #21407374	electronics.clocks	casio	48.6500	36	1
+21408050	Romanson clocks #21408050	electronics.clocks	romanson	134.3700	104	1
+21408163	Clocks #21408163	electronics.clocks	unknown	1513.5500	137	19
+21408790	Orient clocks #21408790	electronics.clocks	orient	170.1500	35	1
+21408795	Orient clocks #21408795	electronics.clocks	orient	163.2000	59	1
+21408885	Orient clocks #21408885	electronics.clocks	orient	163.2000	81	2
+21409219	Clocks #21409219	electronics.clocks	unknown	1416.5100	92	1
+21409755	Clocks #21409755	electronics.clocks	unknown	298.3300	31	1
+21410839	Casio clocks #21410839	electronics.clocks	casio	477.2300	24	1
+21411708	Edox clocks #21411708	electronics.clocks	edox	770.9300	82	1
+21411729	Edox clocks #21411729	electronics.clocks	edox	1029.6300	102	1
+21800017	Living Room Cabinet #21800017	furniture.living_room.cabinet	unknown	7.4400	21	2
+21800054	Living Room Cabinet #21800054	furniture.living_room.cabinet	unknown	5.1200	26	2
+21800109	Living Room Cabinet #21800109	furniture.living_room.cabinet	unknown	15.1600	20	1
+22400096	Stagg accessories radar #22400096	auto.accessories.radar	stagg	79.8000	23	1
+22400122	Trust accessories radar #22400122	auto.accessories.radar	trust	128.6300	60	12
+22400191	Trust accessories radar #22400191	auto.accessories.radar	trust	36.7800	66	1
+22500020	Brateck kitchen table #22500020	furniture.kitchen.table	brateck	18.7500	23	1
+22500119	Hitechnic kitchen table #22500119	furniture.kitchen.table	hitechnic	12.6100	48	2
+22500259	Brateck kitchen table #22500259	furniture.kitchen.table	brateck	9.2400	25	1
+22700078	Stels general product #22700078	unknown category	stels	185.3300	95	1
+22700129	Force general product #22700129	unknown category	force	72.3300	110	1
+22700538	Jonnesway general product #22700538	unknown category	jonnesway	152.1300	46	1
+22900002	Vegas notebook #22900002	computers.notebook	vegas	43.5000	26	2
+22900004	Vegas notebook #22900004	computers.notebook	vegas	46.0800	48	1
+22900008	Vegas notebook #22900008	computers.notebook	vegas	42.7300	25	1
+23700075	Bedroom Blanket #23700075	furniture.bedroom.blanket	unknown	27.5700	26	1
+24600214	Tools Pump #24600214	construction.tools.pump	unknown	6.1800	43	1
+24600312	Gosh tools pump #24600312	construction.tools.pump	gosh	7.5700	24	1
+24600695	Tools Pump #24600695	construction.tools.pump	unknown	6.6900	38	1
+25001467	Universal Light #25001467	furniture.universal.light	unknown	1012.9800	25	1
+26000154	General Product #26000154	unknown category	unknown	5.1700	22	1
+26001044	General Product #26001044	unknown category	unknown	7.5500	20	1
+26204150	Components Faucet #26204150	construction.components.faucet	unknown	426.4000	57	10
+26205010	Components Faucet #26205010	construction.components.faucet	unknown	251.2300	24	2
+26205017	Components Faucet #26205017	construction.components.faucet	unknown	171.4300	18	7
+26205150	Components Faucet #26205150	construction.components.faucet	unknown	126.9000	46	1
+26205168	Components Faucet #26205168	construction.components.faucet	unknown	116.3500	37	1
+26206020	Merelani components faucet #26206020	construction.components.faucet	merelani	114.5500	22	1
+26300081	Lucente kitchen coffee grinder #26300081	appliances.kitchen.coffee_grinder	lucente	469.9700	38	14
+26300089	Lucente kitchen coffee grinder #26300089	appliances.kitchen.coffee_grinder	lucente	288.0200	46	3
+26300108	Lucente kitchen coffee grinder #26300108	appliances.kitchen.coffee_grinder	lucente	1088.8300	32	17
+26300188	Lucente kitchen coffee grinder #26300188	appliances.kitchen.coffee_grinder	lucente	741.8500	86	39
+26400203	Printer #26400203	computers.peripherals.printer	unknown	209.0100	22	2
+26400277	Lucente printer #26400277	computers.peripherals.printer	lucente	150.5800	29	2
+26400299	Lucente printer #26400299	computers.peripherals.printer	lucente	165.5100	26	1
+26400397	Printer #26400397	computers.peripherals.printer	unknown	291.1300	20	1
+26400624	Printer #26400624	computers.peripherals.printer	unknown	380.9600	45	19
+26400666	Lucente printer #26400666	computers.peripherals.printer	lucente	194.0800	62	13
+26401929	Merelani printer #26401929	computers.peripherals.printer	merelani	91.8900	94	2
+26402497	Printer #26402497	computers.peripherals.printer	unknown	657.7600	33	3
+26403268	Printer #26403268	computers.peripherals.printer	unknown	252.2600	36	1
+26403275	Printer #26403275	computers.peripherals.printer	unknown	261.7800	21	3
+26403513	Printer #26403513	computers.peripherals.printer	unknown	286.7500	19	2
+26403614	Printer #26403614	computers.peripherals.printer	unknown	639.2400	39	13
+26404574	Printer #26404574	computers.peripherals.printer	unknown	486.6300	30	5
+26500139	Lucente toys #26500139	kids.toys	lucente	187.1650	23	2
+26500349	Merelani toys #26500349	kids.toys	merelani	126.6400	44	4
+26600099	Bedroom Bed #26600099	furniture.bedroom.bed	unknown	171.9500	23	2
+26800075	General Product #26800075	unknown category	unknown	427.3000	22	1
+27800054	General Product #27800054	unknown category	unknown	119.6900	44	2
+28400291	Karya bag #28400291	accessories.bag	karya	65.6400	21	1
+28715895	Rieker underwear #28715895	apparel.underwear	rieker	107.8500	50	1
+29502692	Energybody components cooler #29502692	computers.components.cooler	energybody	22.9100	35	3
+30000057	Tools Welding #30000057	construction.tools.welding	unknown	164.4600	101	2
+30000237	Hyundai tools welding #30000237	construction.tools.welding	hyundai	114.5400	45	3
+30000238	Hyundai tools welding #30000238	construction.tools.welding	hyundai	106.8000	29	1
+30700017	Huter general product #30700017	unknown category	huter	133.2400	22	2
+30900002	Deepcool peripherals mouse #30900002	computers.peripherals.mouse	deepcool	20.4400	20	1
+30900006	Peripherals Mouse #30900006	computers.peripherals.mouse	unknown	27.6600	48	1
+30900114	Aerocool peripherals mouse #30900114	computers.peripherals.mouse	aerocool	3.9300	27	1
+30900474	Peripherals Mouse #30900474	computers.peripherals.mouse	unknown	45.5200	24	1
+30900584	Deepcool peripherals mouse #30900584	computers.peripherals.mouse	deepcool	42.9600	23	1
+31300087	Pasabahce kitchen table #31300087	furniture.kitchen.table	pasabahce	4.0900	38	4
+33400004	Sock #33400004	apparel.sock	unknown	85.4600	37	1
+34700076	Personal Massager #34700076	appliances.personal.massager	unknown	14.3900	39	1
+38100015	Pupa shoes #38100015	apparel.shoes	pupa	13.0100	30	1
+38100086	Shoes #38100086	apparel.shoes	unknown	5.4100	34	1
+40500282	Orico country yard cultivator #40500282	country_yard.cultivator	orico	2.7000	23	1
+42200146	Shirt #42200146	apparel.shirt	unknown	13.9000	37	2
+42400019	Bosch kitchen kettle #42400019	appliances.kitchen.kettle	bosch	174.2600	45	1
+43300102	Nike audio music tools piano #43300102	electronics.audio.music_tools.piano	nike	33.0950	18	2
+43500015	Alteco shoes #43500015	apparel.shoes	alteco	16.7200	32	1
+45500010	Deepcool ski #45500010	sport.ski	deepcool	20.3100	25	2
+48100000	Bag #48100000	accessories.bag	unknown	14.9000	25	1
+50500066	Shoes Moccasins #50500066	apparel.shoes.moccasins	unknown	31.2400	27	1
+50600003	Shirt #50600003	apparel.shirt	unknown	143.6100	113	1
+52900029	Stanley trainer #52900029	sport.trainer	stanley	59.0700	21	2
+52900100	Stanley trainer #52900100	sport.trainer	stanley	21.3900	24	2
+52900139	Stanley trainer #52900139	sport.trainer	stanley	22.0900	23	1
+52900140	Stanley trainer #52900140	sport.trainer	stanley	31.3000	73	6
+52900141	Stanley trainer #52900141	sport.trainer	stanley	44.6100	62	2
+52900144	Stanley trainer #52900144	sport.trainer	stanley	45.9500	63	1
+52900192	Stanley trainer #52900192	sport.trainer	stanley	55.0900	42	2
+52900193	Stanley trainer #52900193	sport.trainer	stanley	13.3900	24	1
+54900018	Shirt #54900018	apparel.shirt	unknown	51.4800	22	1
+55600006	Desktop #55600006	computers.desktop	unknown	311.6900	23	2
+56700007	Intex shoes #56700007	apparel.shoes	intex	36.4900	23	1
+57000001	Personal Scales #57000001	appliances.personal.scales	unknown	41.9300	26	1
+57000018	Alteco personal scales #57000018	appliances.personal.scales	alteco	41.9200	42	1
+57100126	Sarmat ebooks #57100126	computers.ebooks	sarmat	27.6700	25	1
+58300001	Redmond ski #58300001	sport.ski	redmond	51.4600	43	1
+100000242	Kingston slip-on shoes #100000242	apparel.shoes.slipons	kingston	117.5800	30	1
+100002292	Xiaomi bicycle #100002292	sport.bicycle	xiaomi	79.1100	11	1
+100002367	Amd shoes step ins #100002367	apparel.shoes.step_ins	amd	179.9300	62	1
+100002601	Components Faucet #100002601	construction.components.faucet	unknown	233.9800	21	12
+100003358	Lenovo headphones #100003358	electronics.audio.headphone	lenovo	566.2700	103	5
+100003480	G.Skill slip-on shoes #100003480	apparel.shoes.slipons	g.skill	109.0800	98	24
+100006102	Lenovo headphones #100006102	electronics.audio.headphone	lenovo	393.5800	60	2
+100006963	Yasin personal massager #100006963	appliances.personal.massager	yasin	163.1200	36	2
+100007351	Tools Drill #100007351	construction.tools.drill	unknown	13.8700	44	1
+100008083	Asus headphones #100008083	electronics.audio.headphone	asus	771.9600	128	1
+100008228	Lenovo headphones #100008228	electronics.audio.headphone	lenovo	334.3700	201	8
+100008325	Xiaomi kitchen chair #100008325	furniture.kitchen.chair	xiaomi	25.4800	44	1
+100008550	Pulser kitchen refrigerator #100008550	appliances.kitchen.refrigerators	pulser	580.4900	172	19
+100008570	Pulser kitchen refrigerator #100008570	appliances.kitchen.refrigerators	pulser	409.5100	40	1
+100009754	Xiaomi tool light #100009754	construction.tools.light	xiaomi	217.2500	554	16
+100010035	G.Skill slip-on shoes #100010035	apparel.shoes.slipons	g.skill	112.4100	17	5
+100010164	Pulser kitchen refrigerator #100010164	appliances.kitchen.refrigerators	pulser	298.6200	50	9
+100010474	Autoline video tv #100010474	electronics.video.tv	autoline	283.1500	44	4
+100011103	Acer headphones #100011103	electronics.audio.headphone	acer	385.5700	243	12
+100011332	HP notebook #100011332	computers.notebook	hp	810.7500	36	1
+100011623	Midea kitchen refrigerator #100011623	appliances.kitchen.refrigerators	midea	405.2100	79	2
+100013088	Kitfort kitchen mixer #100013088	appliances.kitchen.mixer	kitfort	128.6800	55	1
+100013279	Accessories Compressor #100013279	auto.accessories.compressor	unknown	608.7700	51	8
+100013557	Canyon kitchen table #100013557	furniture.kitchen.table	canyon	7.7000	35	2
+100013854	Pccooler peripherals mouse #100013854	computers.peripherals.mouse	pccooler	25.8800	36	1
+100013862	Pccooler peripherals mouse #100013862	computers.peripherals.mouse	pccooler	52.2900	42	1
+100013980	Xiaomi tool light #100013980	construction.tools.light	xiaomi	233.1800	333	51
+100013991	Xiaomi tool light #100013991	construction.tools.light	xiaomi	208.0600	259	1
+100014007	A-Case tools welding #100014007	construction.tools.welding	a-case	2.5500	49	29
+100014627	Philips personal massager #100014627	appliances.personal.massager	philips	411.8300	33	1
+100015452	Centek camera photo #100015452	electronics.camera.photo	centek	46.3100	24	2
+100015658	Samsung tool light #100015658	construction.tools.light	samsung	1747.7700	26	1
+100015982	Accessories Compressor #100015982	auto.accessories.compressor	unknown	415.2000	28	1
+100016652	Accessories Compressor #100016652	auto.accessories.compressor	unknown	556.5100	36	2
+100017129	Accessories Compressor #100017129	auto.accessories.compressor	unknown	588.4300	25	1
+100017320	Centek kitchen blender #100017320	appliances.kitchen.blender	centek	42.2100	36	1
+100017960	Huawei tool light #100017960	construction.tools.light	huawei	889.3400	68	1
+100018214	Arg personal hair cutter #100018214	appliances.personal.hair_cutter	arg	16.7100	65	1
+100018517	Asus headphones #100018517	electronics.audio.headphone	asus	334.3700	74	3
+100020167	Romer underwear #100020167	apparel.underwear	romer	101.9300	110	1
+100021262	Bestway general product #100021262	unknown category	bestway	28.0600	58	2
+100021596	Kitchen Refrigerator #100021596	appliances.kitchen.refrigerators	unknown	321.7300	97	1
+100021671	Beyond desktop #100021671	computers.desktop	beyond	27.1600	46	1
+100022253	Asus headphones #100022253	electronics.audio.headphone	asus	270.0200	117	1
+100022293	Asus headphones #100022293	electronics.audio.headphone	asus	553.1700	24	5
+100022305	Berlingerhaus kitchen kettle #100022305	appliances.kitchen.kettle	berlingerhaus	43.7300	64	1
+100022400	Asrock environment air heater #100022400	appliances.environment.air_heater	asrock	238.6300	30	1
+100022581	Bestway general product #100022581	unknown category	bestway	25.4800	49	2
+100022609	Kingston slip-on shoes #100022609	apparel.shoes.slipons	kingston	130.6100	18	2
+100023316	HP headphones #100023316	electronics.audio.headphone	hp	1039.9200	107	1
+100023500	Xiaomi tool light #100023500	construction.tools.light	xiaomi	281.4000	122	19
+100023514	Acer headphones #100023514	electronics.audio.headphone	acer	900.6700	358	6
+100023770	Asus headphones #100023770	electronics.audio.headphone	asus	720.7100	74	2
+100026290	Tools Drill #100026290	construction.tools.drill	unknown	21.6000	43	2
+100027668	Romer underwear #100027668	apparel.underwear	romer	81.6000	104	1
+100028173	Sony shorts #100028173	apparel.shorts	sony	73.0800	67	3
+100029766	Acer headphones #100029766	electronics.audio.headphone	acer	493.6800	133	1
+100030178	Brabix tablet #100030178	electronics.tablet	brabix	183.5700	27	1
+100030206	Brabix tablet #100030206	electronics.tablet	brabix	170.9700	25	1
+100030398	Tecno tool light #100030398	construction.tools.light	tecno	172.2100	35	1
+100030913	Lenovo headphones #100030913	electronics.audio.headphone	lenovo	476.1800	28	1
+100033708	Xiaomi tool light #100033708	construction.tools.light	xiaomi	321.5000	219	2
+100034355	Msi environment air heater #100034355	appliances.environment.air_heater	msi	226.0500	52	14
+100034606	Electrolux kitchen oven #100034606	appliances.kitchen.oven	electrolux	509.6400	22	1
+100035215	HP headphones #100035215	electronics.audio.headphone	hp	339.5200	37	1
+100035689	Realme tool light #100035689	construction.tools.light	realme	236.5600	146	1
+100037027	Xiaomi tool light #100037027	construction.tools.light	xiaomi	186.4750	121	2
+100037038	Xiaomi tool light #100037038	construction.tools.light	xiaomi	192.0300	129	1
+100038296	Bicycle #100038296	sport.bicycle	unknown	85.7900	21	3
+100038541	Accessories Compressor #100038541	auto.accessories.compressor	unknown	497.8200	57	15
+100039887	Kivi personal massager #100039887	appliances.personal.massager	kivi	460.7600	20	7
+100039938	Clocks #100039938	electronics.clocks	unknown	2198.2500	25	4
+100041192	Acer headphones #100041192	electronics.audio.headphone	acer	493.6800	49	1
+100041317	Xiaomi tool light #100041317	construction.tools.light	xiaomi	290.8700	67	1
+100042326	Jade printer #100042326	computers.peripherals.printer	jade	120.4700	65	1
+100042649	Intel shoes step ins #100042649	apparel.shoes.step_ins	intel	255.4400	37	1
+100043003	Huawei tool light #100043003	construction.tools.light	huawei	449.9200	118	1
+100044077	Alteco shirt #100044077	apparel.shirt	alteco	463.3300	65	1
+100044929	Components Faucet #100044929	construction.components.faucet	unknown	271.2400	21	3
+100045288	Printer #100045288	computers.peripherals.printer	unknown	320.7300	28	2
+100049804	Pulser kitchen refrigerator #100049804	appliances.kitchen.refrigerators	pulser	999.2300	63	1
+100050672	Aimoto clocks #100050672	electronics.clocks	aimoto	66.6700	32	1
+100051366	HP headphones #100051366	electronics.audio.headphone	hp	820.5900	325	4
+100051678	Stanley trainer #100051678	sport.trainer	stanley	32.6900	21	1
+100052437	HP headphones #100052437	electronics.audio.headphone	hp	957.7300	39	1
+100055405	Asus headphones #100055405	electronics.audio.headphone	asus	592.0100	523	22
+100055713	Jade components faucet #100055713	construction.components.faucet	jade	177.6100	19	2
+100056977	Realme tool light #100056977	construction.tools.light	realme	630.6500	49	2
+100061916	Hansa kitchen oven #100061916	appliances.kitchen.oven	hansa	267.6800	39	3
+100062212	Aerocool tablet #100062212	electronics.tablet	aerocool	223.6600	24	1
+100062484	Huawei tool light #100062484	construction.tools.light	huawei	302.3200	56	5
+100062617	Asus headphones #100062617	electronics.audio.headphone	asus	473.4500	50	1
+100062664	HP headphones #100062664	electronics.audio.headphone	hp	1183.8100	24	1
+100063652	Kitchen Refrigerator #100063652	appliances.kitchen.refrigerators	unknown	296.0700	66	2
+100064186	Kingston slip-on shoes #100064186	apparel.shoes.slipons	kingston	125.2300	86	36
+100064234	Kitchen Refrigerator #100064234	appliances.kitchen.refrigerators	unknown	270.6600	40	1
+100065958	Lenovo headphones #100065958	electronics.audio.headphone	lenovo	354.9600	67	1
+100065962	Asus headphones #100065962	electronics.audio.headphone	asus	1183.8100	26	1
+100067225	Sokolov bedroom bed #100067225	furniture.bedroom.bed	sokolov	444.8800	26	9
+100067309	Naturehike swing #100067309	kids.swing	naturehike	28.0600	20	1
+100068441	Samsung tool light #100068441	construction.tools.light	samsung	280.2500	129	9
+100068488	Samsung tool light #100068488	construction.tools.light	samsung	280.8200	526	27
+100068491	Samsung tool light #100068491	construction.tools.light	samsung	280.1450	148	4
+100068492	Samsung tool light #100068492	construction.tools.light	samsung	320.1300	93	1
+100068493	Samsung tool light #100068493	construction.tools.light	samsung	319.4200	391	24
+100068496	Samsung tool light #100068496	construction.tools.light	samsung	325.3200	122	8
+100068602	Vivo tool light #100068602	construction.tools.light	vivo	295.9900	268	1
+100068976	P.I.T. kitchen hood #100068976	appliances.kitchen.hood	p.i.t.	56.6300	28	1
+100070516	Alteco shirt #100070516	apparel.shirt	alteco	220.0800	39	1
+100077531	Pituso trainer #100077531	sport.trainer	pituso	167.3100	45	1
+100077642	Midea camera photo #100077642	electronics.camera.photo	midea	25.7100	65	2
+100078427	Dewalt general product #100078427	unknown category	dewalt	25.7300	24	1
+100078528	Meizu tool light #100078528	construction.tools.light	meizu	257.1500	86	1
+100078561	Meizu tool light #100078561	construction.tools.light	meizu	164.4400	76	1
+100079195	Thorvik general product #100079195	unknown category	thorvik	13.1300	21	1
+100079580	Pccooler peripherals mouse #100079580	computers.peripherals.mouse	pccooler	10.4800	30	1
+100079717	Realme tool light #100079717	construction.tools.light	realme	208.2400	58	1
+100079882	Lenovo headphones #100079882	electronics.audio.headphone	lenovo	447.6300	20	1
+100080044	Dewalt general product #100080044	unknown category	dewalt	19.3100	19	2
+100080080	Pituso trainer #100080080	sport.trainer	pituso	167.3100	25	1
+100080095	Pituso trainer #100080095	sport.trainer	pituso	167.3100	44	1
+100080350	Pulser kitchen refrigerator #100080350	appliances.kitchen.refrigerators	pulser	1052.0700	129	2
+100080841	OPPO tool light #100080841	construction.tools.light	oppo	277.9700	214	11
+100080849	Realme tool light #100080849	construction.tools.light	realme	205.7950	105	2
+100081778	Lenovo headphones #100081778	electronics.audio.headphone	lenovo	298.3300	98	2
+100083365	Rondell country yard furniture bench #100083365	country_yard.furniture.bench	rondell	24.1700	22	5
+100084379	General Product #100084379	unknown category	unknown	26.6200	52	3
+100084807	Samsung personal massager #100084807	appliances.personal.massager	samsung	146.7000	45	1
+100084853	Asus headphones #100084853	electronics.audio.headphone	asus	384.8700	19	4
+100084859	Lenovo headphones #100084859	electronics.audio.headphone	lenovo	401.3000	116	1
+100085080	Clocks #100085080	electronics.clocks	unknown	251.4900	35	1
+100085434	HP headphones #100085434	electronics.audio.headphone	hp	1389.9700	60	2
+100086009	Crown general product #100086009	unknown category	crown	37.3200	63	1
+100086203	Samsung tool light #100086203	construction.tools.light	samsung	103.5800	220	28
+100086235	Samsung tool light #100086235	construction.tools.light	samsung	103.7300	59	5
+100086238	Samsung tool light #100086238	construction.tools.light	samsung	102.9600	91	10
+100086945	Mutant desktop #100086945	computers.desktop	mutant	114.6700	22	5
+100088951	Defacto shoes keds #100088951	apparel.shoes.keds	defacto	7.7000	25	1
+100090024	LG kitchen washer #100090024	appliances.kitchen.washer	lg	355.4800	204	3
+100090352	Lenovo headphones #100090352	electronics.audio.headphone	lenovo	952.1500	310	13
+100091391	Asus headphones #100091391	electronics.audio.headphone	asus	693.8900	92	2
+100091410	Alteco shoes #100091410	apparel.shoes	alteco	34.2400	23	1
+100100966	Gigabyte environment air heater #100100966	appliances.environment.air_heater	gigabyte	270.0200	24	4
+100101185	Samsung tool light #100101185	construction.tools.light	samsung	468.2200	147	1
+100101230	Samsung tool light #100101230	construction.tools.light	samsung	478.1250	363	4
+100104459	Kingston slip-on shoes #100104459	apparel.shoes.slipons	kingston	61.1500	50	5
+100104481	Acer headphones #100104481	electronics.audio.headphone	acer	771.9400	400	1
+100104609	Gigabyte environment air heater #100104609	appliances.environment.air_heater	gigabyte	237.5500	37	1
+100104755	Acer headphones #100104755	electronics.audio.headphone	acer	488.7900	250	9
+100104779	HP kitchen juicer #100104779	appliances.kitchen.juicer	hp	35.7800	36	1
+100106029	Acer headphones #100106029	electronics.audio.headphone	acer	864.6000	209	1
+100106207	Acer headphones #100106207	electronics.audio.headphone	acer	694.7400	410	20
+100107798	Huawei tool light #100107798	construction.tools.light	huawei	166.0000	91	12
+100107882	Huawei tool light #100107882	construction.tools.light	huawei	330.2300	100	3
+100107906	Huawei tool light #100107906	construction.tools.light	huawei	330.0450	141	2
+100107910	LG kitchen washer #100107910	appliances.kitchen.washer	lg	351.8500	27	3
+100109538	Pulser kitchen refrigerator #100109538	appliances.kitchen.refrigerators	pulser	1052.1600	47	1
+100109543	Pulser kitchen refrigerator #100109543	appliances.kitchen.refrigerators	pulser	977.0700	239	47
+100109549	Pulser kitchen refrigerator #100109549	appliances.kitchen.refrigerators	pulser	810.3000	131	3
+100109756	Huawei tool light #100109756	construction.tools.light	huawei	347.7300	206	7
+100109769	Huawei tool light #100109769	construction.tools.light	huawei	353.6500	156	1
+100109896	Components Faucet #100109896	construction.components.faucet	unknown	155.6800	23	1
+100110837	Vegas general product #100110837	unknown category	vegas	89.0600	21	1
+100114279	Kitchen Refrigerator #100114279	appliances.kitchen.refrigerators	unknown	274.6300	44	1
+100114413	Denn personal massager #100114413	appliances.personal.massager	denn	231.6400	69	3
+100114445	Pulser kitchen refrigerator #100114445	appliances.kitchen.refrigerators	pulser	492.0800	22	1
+100114546	Denn personal massager #100114546	appliances.personal.massager	denn	167.2900	44	1
+100115260	Salamander environment climate #100115260	appliances.environment.climate	salamander	96.5300	32	1
+100115315	Pituso shoes step ins #100115315	apparel.shoes.step_ins	pituso	46.0800	46	2
+100115405	Lenovo headphones #100115405	electronics.audio.headphone	lenovo	920.2300	219	3
+100116567	Lenovo headphones #100116567	electronics.audio.headphone	lenovo	566.2700	17	1
+100116895	Stels kitchen toaster #100116895	appliances.kitchen.toster	stels	252.2600	92	3
+100117157	Stels kitchen toaster #100117157	appliances.kitchen.toster	stels	141.5700	20	1
+100117174	Pulser kitchen refrigerator #100117174	appliances.kitchen.refrigerators	pulser	1107.0100	58	2
+100117273	Stels kitchen toaster #100117273	appliances.kitchen.toster	stels	306.3100	49	1
+100117907	Samsung bicycle #100117907	sport.bicycle	samsung	137.9450	57	4
+100117966	Kitfort ski #100117966	sport.ski	kitfort	69.0250	83	2
+100118273	Midea camera photo #100118273	electronics.camera.photo	midea	25.7100	61	1
+100118746	Imperial printer #100118746	computers.peripherals.printer	imperial	191.0700	20	2
+100119157	Imperial printer #100119157	computers.peripherals.printer	imperial	532.8000	40	3
+100119370	Samsung tool light #100119370	construction.tools.light	samsung	946.9700	162	1
+100119386	Samsung tool light #100119386	construction.tools.light	samsung	1403.5300	131	3
+100120410	Pulser kitchen refrigerator #100120410	appliances.kitchen.refrigerators	pulser	528.3000	54	1
+100120426	Pulser kitchen refrigerator #100120426	appliances.kitchen.refrigerators	pulser	857.4600	257	58
+100120437	Asus headphones #100120437	electronics.audio.headphone	asus	231.5900	90	3
+100121964	Imperial printer #100121964	computers.peripherals.printer	imperial	760.4900	67	1
+100123730	Asus headphones #100123730	electronics.audio.headphone	asus	514.7900	62	1
+100124593	Kotik underwear #100124593	apparel.underwear	kotik	4.8600	26	2
+100125481	Respect peripherals mouse #100125481	computers.peripherals.mouse	respect	76.9600	56	2
+100127758	LG kitchen washer #100127758	appliances.kitchen.washer	lg	324.4400	56	2
+100128108	Asus headphones #100128108	electronics.audio.headphone	asus	386.0800	31	1
+100132144	Gigabyte environment air heater #100132144	appliances.environment.air_heater	gigabyte	217.4800	90	30
+100132246	Bosch general product #100132246	unknown category	bosch	56.6600	31	1
+100132295	Kitchen Hood #100132295	appliances.kitchen.hood	unknown	118.3900	32	1
+100132447	Pulser kitchen refrigerator #100132447	appliances.kitchen.refrigerators	pulser	792.2700	97	4
+100132708	Huawei tool light #100132708	construction.tools.light	huawei	460.2400	63	1
+100133514	LG kitchen washer #100133514	appliances.kitchen.washer	lg	371.6600	59	3
+100134500	Kolner general product #100134500	unknown category	kolner	57.1700	23	1
+100135934	Air Conditioner #100135934	appliances.environment.air_conditioner	unknown	167.3400	22	2
+100137120	Imperial bedroom bed #100137120	furniture.bedroom.bed	imperial	69.1300	45	1
+100140603	Giant kitchen toaster #100140603	appliances.kitchen.toster	giant	540.3000	36	1
+100143410	Accessories Compressor #100143410	auto.accessories.compressor	unknown	488.3000	39	1
+100143455	Accessories Compressor #100143455	auto.accessories.compressor	unknown	225.7500	25	2
+100143628	Samsung tool light #100143628	construction.tools.light	samsung	381.4500	135	2
+100143638	Samsung tool light #100143638	construction.tools.light	samsung	378.6200	660	8
+100146450	General Product #100146450	unknown category	unknown	27.0300	33	1
+100147397	Imperial components faucet #100147397	construction.components.faucet	imperial	567.5400	42	6
+100147731	Imperial printer #100147731	computers.peripherals.printer	imperial	698.6500	53	22
+100148258	Next snowboard #100148258	sport.snowboard	next	6.4100	27	3
+100148718	General Product #100148718	unknown category	unknown	59.7200	23	1
+100148861	Lucente kitchen coffee grinder #100148861	appliances.kitchen.coffee_grinder	lucente	227.5500	51	2
+100148873	Lucente toys #100148873	kids.toys	lucente	117.3800	20	1
+100148883	Lucente toys #100148883	kids.toys	lucente	104.5100	28	2
+100149264	Sokolov printer #100149264	computers.peripherals.printer	sokolov	465.6500	16	5
+100149561	Xiaomi environment vacuum #100149561	appliances.environment.vacuum	xiaomi	385.8500	19	3
+100152370	Arg air conditioner #100152370	appliances.environment.air_conditioner	arg	180.1600	55	3
+100153854	Glasman bag #100153854	accessories.bag	glasman	64.3300	60	1
+100154935	Adidas shoes keds #100154935	apparel.shoes.keds	adidas	82.7000	16	6
+100155968	Shorts #100155968	apparel.shorts	unknown	809.2900	66	1
+100156426	Sokolov printer #100156426	computers.peripherals.printer	sokolov	498.9300	40	11
+100157314	Artel kitchen oven #100157314	appliances.kitchen.oven	artel	67.1800	25	1
+100157391	Desktop #100157391	computers.desktop	unknown	54.0300	27	1
+100158970	Vitek personal hair cutter #100158970	appliances.personal.hair_cutter	vitek	17.9700	26	1
+100160344	Jade components faucet #100160344	construction.components.faucet	jade	2574.0700	21	1
+100160392	Anemone peripherals mouse #100160392	computers.peripherals.mouse	anemone	81.0800	20	1
+100165742	Centurion kitchen toaster #100165742	appliances.kitchen.toster	centurion	411.5900	73	19
+100165757	Centurion kitchen toaster #100165757	appliances.kitchen.toster	centurion	437.3300	51	13
+100170303	Lenovo headphones #100170303	electronics.audio.headphone	lenovo	736.8800	11	3
+100170577	HP headphones #100170577	electronics.audio.headphone	hp	373.0400	174	4
+100170743	Dell headphones #100170743	electronics.audio.headphone	dell	810.5700	110	1
+100170834	HP headphones #100170834	electronics.audio.headphone	hp	320.8350	146	2
+100171912	Decathlon diapers #100171912	kids.fmcg.diapers	decathlon	31.9200	21	2
+100171925	Decathlon diapers #100171925	kids.fmcg.diapers	decathlon	12.5900	28	4
+100173305	Tools Pump #100173305	construction.tools.pump	unknown	3.8600	27	2
+100173342	Tools Pump #100173342	construction.tools.pump	unknown	9.6500	18	2
+100173416	Tools Pump #100173416	construction.tools.pump	unknown	5.9200	21	1
+100173424	Tools Pump #100173424	construction.tools.pump	unknown	9.6500	21	1
+100173452	Tools Pump #100173452	construction.tools.pump	unknown	9.6500	30	2
+100175387	Tools Pump #100175387	construction.tools.pump	unknown	9.6500	21	2
+100176333	Asus headphones #100176333	electronics.audio.headphone	asus	875.1600	151	2
+100176589	Nike toys #100176589	kids.toys	nike	164.4800	18	3
+100178805	Sokolov bedroom bed #100178805	furniture.bedroom.bed	sokolov	93.4600	24	1
+100180092	Tools Painting #100180092	construction.tools.painting	unknown	16.7300	31	9
+100180993	Bag #100180993	accessories.bag	unknown	71.8200	44	5
+100181347	Pulser kitchen refrigerator #100181347	appliances.kitchen.refrigerators	pulser	906.5600	50	4
+100181390	Pulser kitchen refrigerator #100181390	appliances.kitchen.refrigerators	pulser	1078.5500	96	2
+100181818	Asus headphones #100181818	electronics.audio.headphone	asus	617.5200	61	1
+100182096	Lenovo headphones #100182096	electronics.audio.headphone	lenovo	1330.5400	82	1
+100185812	Tool Light #100185812	construction.tools.light	unknown	488.7900	58	1
+100185816	Samsung tool light #100185816	construction.tools.light	samsung	386.0800	137	5
+100185821	Samsung tool light #100185821	construction.tools.light	samsung	717.1100	28	2
+100185830	Samsung tool light #100185830	construction.tools.light	samsung	641.6900	26	1
+100185832	Samsung tool light #100185832	construction.tools.light	samsung	522.5100	48	1
+100185841	Samsung tool light #100185841	construction.tools.light	samsung	900.6400	65	6
+100188564	Doloni general product #100188564	unknown category	doloni	43.5000	24	1
+100190575	Sony shoes #100190575	apparel.shoes	sony	400.7600	222	3
+100192971	Uragan general product #100192971	unknown category	uragan	6.3100	25	1
+100193950	Obey audio music tools piano #100193950	electronics.audio.music_tools.piano	obey	37.3000	19	2
+100195448	Indigo skates #100195448	kids.skates	indigo	108.0900	65	1
+100195867	Uragan general product #100195867	unknown category	uragan	6.6900	23	1
+100196137	Acer headphones #100196137	electronics.audio.headphone	acer	1029.6000	96	1
+100197318	Stels kitchen toaster #100197318	appliances.kitchen.toster	stels	244.5400	82	4
+100197328	Printer #100197328	computers.peripherals.printer	unknown	1075.7000	16	5
+100200068	OPPO tool light #100200068	construction.tools.light	oppo	231.6400	61	3
+100201922	Clocks #100201922	electronics.clocks	unknown	494.2200	40	1
+100203903	Decathlon tools drill #100203903	construction.tools.drill	decathlon	20.3400	26	1
+100206886	Kitfort ski #100206886	sport.ski	kitfort	166.2600	50	1
+100206902	Kitfort ski #100206902	sport.ski	kitfort	206.4100	42	1
+100209782	Shoes Keds #100209782	apparel.shoes.keds	unknown	160.1100	20	1
+100216122	Bicycle #100216122	sport.bicycle	unknown	15.1900	30	1
+100217458	Oem general product #100217458	unknown category	oem	3.8400	22	1
+100222334	Adidas bathroom bath #100222334	furniture.bathroom.bath	adidas	117.3500	23	1
+100226403	Decathlon bag #100226403	accessories.bag	decathlon	9.5000	34	1

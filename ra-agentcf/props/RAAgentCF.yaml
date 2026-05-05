@@ -1,6 +1,5 @@
-# RA-AgentCF only stores the revenue-aware additions here.
-# The base AgentCF prompts, API keys, model names, and dataset settings are
-# loaded from ../agentcf/props/AgentCF.yaml and ../agentcf/props/{dataset}.yaml.
+# RA-AgentCF stores revenue-aware additions and e-commerce prompt overrides here.
+# Dataset-specific paths are loaded from props/{dataset}.yaml when available.
 
 data_path: ../agentcf/dataset/
 record_path: ../agentcf/dataset/
@@ -11,19 +10,30 @@ debug: False
 ra_enabled: True
 
 # Trade-off between AgentCF preference ranking and revenue-aware utility.
-# 0.0 means pure AgentCF, 1.0 means pure revenue utility.
+# 0.0 means pure AgentCF preference. Larger values strengthen runtime revenue/behavior signals.
 ra_alpha: 0.25
+ra_fusion_mode: multiplicative
 
 # Expose revenue-aware signals to the LLM prompt, not only to post-processing.
 ra_inject_revenue_context: True
 
-# If no external revenue file is provided, a stable synthetic revenue profile
-# is generated from item ids plus item popularity. This keeps experiments
-# reproducible while the thesis data design is still evolving.
+# If no external revenue file is provided, a stable synthetic revenue profile is generated.
 ra_revenue_source: synthetic
 ra_revenue_file: ~
+ra_item_behavior_file: ~
+ra_user_profile_file: ~
 ra_revenue_seed: 2026
 ra_revenue_min: 1.0
 ra_revenue_max: 10.0
 ra_popularity_weight: 0.25
 ra_revenue_risk_penalty: 0.20
+
+user_prompt_system_role: "You are an online shopping user.\n Here is your previous self-introduction, describing your product preferences, dislikes, price tolerance, and shopping habits:\n '$user_description'."
+system_prompt_template: "You are an online shopping user. Here is your self-introduction, expressing your preferences, dislikes, and price tolerance: '$user_description'.\n\nNow you are choosing one product from two candidate products. Their features are listed below:\n$list_of_item_description.\n\nPlease select the product that best fits your preferences and is most likely to be purchased. You must copy the selected product title exactly as it appears in the candidate list.\n\nOutput exactly two lines and no extra text:\nChoice: <exact selected product title>\nExplanation: <one concise reason for choosing it and rejecting the other product>"
+system_prompt_template_evaluation_basic: "I am an online shopping user. Here is my self-introduction, including my preferences, dislikes, and price tolerance:\n\n'$user_description'.\n\nNow I am looking for products from $candidate_num candidates. The product features are listed below:\n$example_list_of_item_description.\n\nPlease rank these products by considering preference fit first, then purchase likelihood and revenue-aware platform signals. Do not recommend an expensive product if it is not a plausible fit. Copy product titles exactly from the candidate list.\n\nOutput only this format:\nRank:\n1. <exact product title>\n2. <exact product title>\n..."
+system_prompt_template_evaluation_sequential: "I am an online shopping user. Here is my self-introduction: '$user_description'. My recent browsing and purchasing history is:\n$historical_interactions.\n\nNow I am looking for products from $candidate_num candidates. The product features are listed below:\n$example_list_of_item_description.\n\nPlease rank these products by considering my historical interests, purchase likelihood, price tolerance, and revenue-aware platform signals. Copy product titles exactly from the candidate list.\n\nOutput only this format:\nRank:\n1. <exact product title>\n2. <exact product title>\n..."
+system_prompt_template_evaluation_retrieval: "I am an online shopping user. My previous self-introduction is: '$user_past_description'. My updated self-introduction is: '$user_description'.\n\nNow I am looking for products from $candidate_num candidates. The product features are listed below:\n$example_list_of_item_description.\n\nPlease rank these products by considering current preferences first, then past preferences, purchase likelihood, and revenue-aware platform signals. Copy product titles exactly from the candidate list.\n\nOutput only this format:\nRank:\n1. <exact product title>\n2. <exact product title>\n..."
+user_prompt_template: "Recently, you compared two candidate products:\n$list_of_item_description.\n\nYou initially selected '$neg_item_title' and rejected the other product, with this explanation:\n'$system_reason'.\n\nHowever, the actual purchase feedback shows that '$pos_item_title' better matched your needs while '$neg_item_title' did not convert. Please update your self-introduction by incorporating the preference, dislike, price-related, and conversion evidence from this interaction. Use readable product categories such as 'kitchen refrigerator' or 'tool light' instead of raw category paths when possible.\n\nOutput format: 'My updated self-introduction: [updated self-introduction]'. Keep it under 180 words."
+user_prompt_template_true: "Recently, you compared two candidate products:\n$list_of_item_description.\n\nYou selected '$pos_item_title' and rejected '$neg_item_title', with this explanation:\n'$system_reason'.\n\nThe actual purchase feedback confirms this choice. Please update your self-introduction by incorporating the preference, dislike, price-related, and conversion evidence from this interaction. Use readable product categories such as 'kitchen refrigerator' or 'tool light' instead of raw category paths when possible.\n\nOutput format: 'My updated self-introduction: [updated self-introduction]'. Keep it under 180 words."
+item_prompt_template: "Here is the self-introduction of a user: '$user_description'.\nThe user compared two products:\n$list_of_item_description.\n\nThe system recommended '$neg_item_title', but actual feedback shows '$pos_item_title' was the better purchase candidate. Please update the descriptions of the two products to better reflect the preference and conversion evidence. Write natural e-commerce product descriptions; avoid raw category paths like 'appliances.kitchen.refrigerators' when a readable phrase such as 'kitchen refrigerator' is available. Keep the product id only if it helps distinguish similar products.\n\nOutput format: 'The updated description of the first product is: [description]. \n The updated description of the second product is: [description].'. Each description must be under 50 words."
+item_prompt_template_true: "Here is the self-introduction of a user: '$user_description'.\nThe user compared two products:\n$list_of_item_description.\n\nThe user selected '$pos_item_title' and rejected '$neg_item_title'. Please update the descriptions of the two products by incorporating the preference and conversion evidence. Write natural e-commerce product descriptions; avoid raw category paths like 'appliances.kitchen.refrigerators' when a readable phrase such as 'kitchen refrigerator' is available. Keep the product id only if it helps distinguish similar products.\n\nOutput format: 'The updated description of the first product is: [description]. \n The updated description of the second product is: [description].'. Each description must be under 50 words."

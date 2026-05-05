@@ -43,18 +43,33 @@ def get_model(model_name):
 
 
 def run_baseline(model_name, dataset_name, **kwargs):
+    ra_dataset_props = os.path.join(CURRENT_DIR, "props", f"{dataset_name}.yaml")
+    agentcf_dataset_props = os.path.join(AGENTCF_ROOT, "props", f"{dataset_name}.yaml")
+    dataset_props = ra_dataset_props if os.path.exists(ra_dataset_props) else agentcf_dataset_props
     props = [
         os.path.join(AGENTCF_ROOT, "props", "overall.yaml"),
         os.path.join(AGENTCF_ROOT, "props", "AgentCF.yaml"),
-        os.path.join(AGENTCF_ROOT, "props", f"{dataset_name}.yaml"),
         os.path.join(CURRENT_DIR, "props", "RAAgentCF.yaml"),
+        dataset_props,
     ]
+    config_overrides = dict(kwargs)
+    if dataset_props == ra_dataset_props:
+        dataset_dir = os.path.join(CURRENT_DIR, "dataset", dataset_name)
+        config_overrides.setdefault("data_path", os.path.join(CURRENT_DIR, "dataset"))
+        config_overrides.setdefault("record_path", os.path.join(CURRENT_DIR, "dataset"))
+        config_overrides.setdefault("ra_revenue_source", "file")
+        config_overrides.setdefault("ra_revenue_file", os.path.join(dataset_dir, f"{dataset_name}.revenue.csv"))
+        config_overrides.setdefault("ra_item_behavior_file", os.path.join(dataset_dir, f"{dataset_name}.item_behavior.csv"))
+        config_overrides.setdefault("ra_user_profile_file", os.path.join(dataset_dir, f"{dataset_name}.user_profile.csv"))
+    else:
+        config_overrides.setdefault("data_path", os.path.join(AGENTCF_ROOT, "dataset"))
+        config_overrides.setdefault("record_path", os.path.join(AGENTCF_ROOT, "dataset"))
     model_class = get_model(model_name)
     config = Config(
         model=model_class,
         dataset=dataset_name,
         config_file_list=props,
-        config_dict=kwargs,
+        config_dict=config_overrides,
     )
     debug = parse_bool(getattr(config, "final_config_dict", {}).get("debug", False))
     if debug:
