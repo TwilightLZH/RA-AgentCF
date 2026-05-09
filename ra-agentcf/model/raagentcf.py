@@ -134,6 +134,10 @@ class RAAgentCF(AgentCF):
         self.ra_enabled = self._config_bool("ra_enabled", True)
         self.ra_alpha = float(config["ra_alpha"])
         self.ra_fusion_mode = getattr(config, "final_config_dict", {}).get("ra_fusion_mode", "multiplicative")
+        self.ra_commercial_signal = getattr(config, "final_config_dict", {}).get("ra_commercial_signal", "utility")
+        self.ra_preference_threshold = self._config_float("ra_preference_threshold", 0.35)
+        self.ra_low_preference_penalty = self._config_float("ra_low_preference_penalty", 0.4)
+        self.ra_hybrid_revenue_weight = self._config_float("ra_hybrid_revenue_weight", 0.6)
         self.ra_inject_revenue_context = self._config_bool("ra_inject_revenue_context", True)
         item_popularity = self._item_popularity(dataset)
         self.revenue_profile = RevenueProfile.from_config(config, self.item_id_token, item_popularity)
@@ -399,8 +403,8 @@ class RAAgentCF(AgentCF):
             mean_price = row.get("mean_purchase_price", "unknown")
             view_count = row.get("view_count", "0")
             purchase_count = row.get("purchase_count", "0")
-            # 这里只写入可观察事实，不把浏览/购买比例直接命名为价格敏感度。
-            # 后续风险与转化信心由 RevenueAgent 根据这些事实和候选商品动态解释。
+            # Store only observable facts here. RevenueAgent interprets price
+            # tolerance, risk, and conversion confidence dynamically.
             self_description = (
                 "I am an online shopping user. "
                 f"My historical purchase price median is {median_price}, "
@@ -466,8 +470,8 @@ class RAAgentCF(AgentCF):
             price = row.get("price:float") or row.get("price") or "unknown"
             view_count = row.get("view_count:float") or row.get("view_count") or "0"
             purchase_count = row.get("purchase_count:float") or row.get("purchase_count") or "0"
-            # 这里把商品侧可观察事实写入 ItemAgent 的初始记忆。
-            # 不在预处理阶段判断 risk，让 agent 在交互和排序时解释这些行为证据。
+            # Keep item-side observable facts in memory and leave risk
+            # interpretation to RevenueAgent during ranking.
             role_description_string = (
                 f"The product is '{title}'. Brand: {brand}. Category: {category}. "
                 f"Estimated revenue/price: {price}. "
@@ -531,6 +535,12 @@ class RAAgentCF(AgentCF):
             return int(default)
         return int(value)
 
+    def _config_float(self, key, default):
+        value = getattr(self.config, "final_config_dict", {}).get(key, default)
+        if value in [None, "", "~"]:
+            return float(default)
+        return float(value)
+
     def _item_popularity(self, dataset):
         popularity = torch.zeros(self.n_items, dtype=torch.float32)
         try:
@@ -558,11 +568,9 @@ class RAAgentCF(AgentCF):
             enriched_descriptions = []
             for j, item in enumerate(idxs[i]):
                 item_id = int(item)
-                item_description = list(self.item_agents[item_id].memory_embedding.keys())[-1]
                 revenue_note = self.revenue_agent.describe_candidate(
                     item_id,
                     user_description,
-                    item_description,
                     user_profile,
                 )
                 enriched_descriptions.append(
@@ -603,25 +611,44 @@ class RAAgentCF(AgentCF):
             preference_norm = self._normalize_preference_scores(preference_scores)
 
             utility_values = []
+            normalized_revenues = []
             raw_revenues = []
             for item_id in item_ids:
-                item_description = list(self.item_agents[item_id].memory_embedding.keys())[-1]
                 signal = self.revenue_agent.score_candidate(
                     item_id,
                     user_description,
-                    item_description,
                     user_profile,
                 )
                 utility_values.append(signal.utility)
+                normalized_revenues.append(signal.normalized_revenue)
                 raw_revenues.append(signal.raw_revenue)
 
             utility_tensor = torch.tensor(utility_values, device=scores.device, dtype=torch.float32)
-            if self.ra_fusion_mode == "linear":
+            revenue_tensor = torch.tensor(normalized_revenues, device=scores.device, dtype=torch.float32)
+            commercial_tensor = self._commercial_signal_tensor(revenue_tensor, utility_tensor)
+
+            if self.ra_fusion_mode in {"linear", "linear_utility"}:
                 combined = (1.0 - self.ra_alpha) * preference_norm + self.ra_alpha * utility_tensor
+            elif self.ra_fusion_mode == "linear_revenue":
+                combined = (1.0 - self.ra_alpha) * preference_norm + self.ra_alpha * revenue_tensor
+            elif self.ra_fusion_mode in {"constrained", "constrained_revenue", "constrained_utility"}:
+                if self.ra_fusion_mode == "constrained_revenue":
+                    commercial_tensor = revenue_tensor
+                elif self.ra_fusion_mode == "constrained_utility":
+                    commercial_tensor = utility_tensor
+                combined = (1.0 - self.ra_alpha) * preference_norm + self.ra_alpha * commercial_tensor
+                low_preference_mask = preference_norm < self.ra_preference_threshold
+                combined = torch.where(
+                    low_preference_mask,
+                    combined * self.ra_low_preference_penalty,
+                    combined,
+                )
             else:
-                # 乘性融合避免“纯高价但不相关”的商品被收益项单独推上去。
+                # Multiplicative fusion is conservative: a high commercial
+                # signal cannot rescue a candidate with very low preference.
                 commercial_factor = (1.0 - self.ra_alpha) + self.ra_alpha * (0.5 + utility_tensor)
                 combined = preference_norm * commercial_factor
+            combined = torch.clamp(combined, min=0.0, max=1.0)
 
             for local_idx, item_id in enumerate(item_ids):
                 scores[row_idx, item_id] = combined[local_idx] * float(self.config["recall_budget"])
@@ -631,8 +658,12 @@ class RAAgentCF(AgentCF):
                     "user_id": user_id,
                     "candidate_item_ids": item_ids,
                     "preference_scores": [float(v) for v in preference_scores.detach().cpu().tolist()],
+                    "preference_norm": [float(v) for v in preference_norm.detach().cpu().tolist()],
                     "revenue_values": raw_revenues,
+                    "normalized_revenue_values": normalized_revenues,
                     "utility_values": utility_values,
+                    "commercial_signal": self.ra_commercial_signal,
+                    "commercial_values": [float(v) for v in commercial_tensor.detach().cpu().tolist()],
                     "combined_scores": [float(v) for v in combined.detach().cpu().tolist()],
                 }
             )
@@ -652,3 +683,12 @@ class RAAgentCF(AgentCF):
         else:
             normalized[valid_mask] = (valid_values - min_value) / (max_value - min_value)
         return normalized
+
+    def _commercial_signal_tensor(self, revenue_tensor, utility_tensor):
+        signal = (self.ra_commercial_signal or "utility").lower()
+        if signal == "revenue":
+            return revenue_tensor
+        if signal == "hybrid":
+            revenue_weight = min(1.0, max(0.0, self.ra_hybrid_revenue_weight))
+            return revenue_weight * revenue_tensor + (1.0 - revenue_weight) * utility_tensor
+        return utility_tensor

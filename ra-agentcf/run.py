@@ -106,7 +106,7 @@ def run_baseline(model_name, dataset_name, **kwargs):
         logger.info(model)
 
     construct_transform(config)
-    if model_name == "RAAgentCF":
+    if model_name in ["RAAgentCF", "AgentCF"] and dataset_props == ra_dataset_props:
         trainer = RAAgentCFTrainer(config, model, dataset)
     elif model_name in ["SASRec", "BPRMF"]:
         trainer = get_trainer(config["MODEL_TYPE"], config["model"])(config, model)
@@ -118,7 +118,6 @@ def run_baseline(model_name, dataset_name, **kwargs):
 
     test_result = trainer.evaluate(
         test_data,
-        model_file="./AgentCF-Sep-07-2024_16-09-29.pth",
         load_best_model=False,
         show_progress=config["show_progress"],
     )

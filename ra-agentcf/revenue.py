@@ -1,18 +1,9 @@
 import csv
 import hashlib
-import os
 from dataclasses import dataclass
 from typing import Dict, Optional
 
 import numpy as np
-
-
-def _as_bool(value):
-    if isinstance(value, bool):
-        return value
-    if value is None:
-        return False
-    return str(value).lower() in {"1", "true", "yes", "y"}
 
 
 def _stable_unit_float(value, seed):
@@ -29,6 +20,48 @@ def _min_max_normalize(values):
     if max_value <= min_value:
         return np.zeros_like(values, dtype=np.float32)
     return (values - min_value) / (max_value - min_value)
+
+
+def _normalize_revenue(values, method="log_percentile", percentile=95.0):
+    """Normalize long-tailed item revenue values to the 0-1 range.
+
+    E-commerce prices are usually long-tailed, so plain min-max scaling makes
+    common mid/high-priced items look artificially small. The default
+    log-percentile path clips extreme head prices before applying log1p.
+    """
+    values = np.asarray(values, dtype=np.float32)
+    normalized = np.zeros_like(values, dtype=np.float32)
+    if values.size == 0:
+        return normalized
+
+    positive_mask = values > 0
+    if not positive_mask.any():
+        return normalized
+
+    method = (method or "log_percentile").lower()
+    percentile = float(percentile)
+    percentile = min(100.0, max(1.0, percentile))
+
+    transformed = values.astype(np.float32, copy=True)
+    positive_values = transformed[positive_mask]
+
+    if method in {"percentile", "log_percentile"}:
+        cap = float(np.percentile(positive_values, percentile))
+        cap = max(cap, 1e-8)
+        transformed = np.minimum(transformed, cap)
+
+    if method in {"log", "log_percentile"}:
+        transformed = np.log1p(transformed)
+    elif method == "minmax":
+        return _min_max_normalize(values)
+    elif method != "percentile":
+        return _min_max_normalize(values)
+
+    scale = float(transformed[positive_mask].max())
+    if scale <= 0:
+        return normalized
+    normalized[positive_mask] = transformed[positive_mask] / scale
+    return np.clip(normalized, 0.0, 1.0)
 
 
 def _has_path(value):
@@ -51,15 +84,23 @@ class RevenueProfile:
         revenue_by_item: Dict[int, float],
         item_behavior_by_item: Optional[Dict[int, Dict[str, float]]] = None,
         user_profile_by_token: Optional[Dict[str, Dict[str, float]]] = None,
+        normalization_method: str = "log_percentile",
+        normalization_percentile: float = 95.0,
     ):
         self.revenue_by_item = revenue_by_item
         max_item_id = max(revenue_by_item.keys()) if revenue_by_item else 0
         raw_values = np.zeros(max_item_id + 1, dtype=np.float32)
         for item_id, revenue in revenue_by_item.items():
             raw_values[item_id] = float(revenue)
-        normalized = _min_max_normalize(raw_values)
+        normalized = _normalize_revenue(
+            raw_values,
+            method=normalization_method,
+            percentile=normalization_percentile,
+        )
         self.raw_values = raw_values
         self.normalized_values = normalized
+        self.normalization_method = normalization_method
+        self.normalization_percentile = float(normalization_percentile)
         self.item_behavior_by_item = item_behavior_by_item or {}
         self.user_profile_by_token = user_profile_by_token or {}
         total_views = sum(v.get("view_count", 0.0) for v in self.item_behavior_by_item.values())
@@ -83,7 +124,16 @@ class RevenueProfile:
             revenue_by_item = cls._load_file(config["ra_revenue_file"], item_id_token)
         else:
             revenue_by_item = cls._build_synthetic(config, item_id_token, item_popularity)
-        return cls(revenue_by_item, item_behavior_by_item, user_profile_by_token)
+        final_config = getattr(config, "final_config_dict", {})
+        normalization_method = final_config.get("ra_revenue_normalization", "log_percentile")
+        normalization_percentile = final_config.get("ra_revenue_percentile", 95.0)
+        return cls(
+            revenue_by_item,
+            item_behavior_by_item,
+            user_profile_by_token,
+            normalization_method=normalization_method,
+            normalization_percentile=normalization_percentile,
+        )
 
     @staticmethod
     def _load_file(path, item_id_token):
@@ -99,7 +149,7 @@ class RevenueProfile:
 
         revenue_by_item = {}
         for item_id, token in enumerate(item_id_token):
-                revenue_by_item[item_id] = revenue_by_token.get(str(token), 0.0)
+            revenue_by_item[item_id] = revenue_by_token.get(str(token), 0.0)
         return revenue_by_item
 
     @staticmethod
@@ -188,11 +238,12 @@ class RevenueProfile:
         )
 
     def behavior_risk(self, item_id):
-        """把行为证据解释成相对风险，而不是直接把 view 占比当 risk。
+        """Interpret behavioral evidence as relative conversion risk.
 
-        电商数据天然 view 远多于 purchase，所以绝对转化率通常都低。这里用
-        全局转化率作为基线：只有“低于全局平均”的商品才产生风险；同时用
-        beta-like smoothing 减轻小样本商品的偶然性。
+        Views naturally outnumber purchases in e-commerce data, so raw
+        conversion rates are usually small. This method compares each item with
+        the global conversion baseline and uses beta-like smoothing so sparse
+        items are not punished too aggressively.
         """
         behavior = self.item_behavior(item_id)
         views = behavior.get("view_count", 0.0)
@@ -232,7 +283,8 @@ class RevenueAgent:
             median_price = user_profile.get("median_purchase_price", 0.0)
             q75_price = user_profile.get("q75_purchase_price", median_price)
             if q75_price > 0:
-                # 用户历史可承受价格越接近当前商品价格，转化信心越高。
+                # The closer the price is to the user's historical tolerance,
+                # the more acceptable the candidate is.
                 price_gap = (raw_revenue - q75_price) / max(q75_price, 1.0)
                 price_affinity = 1.0 / (1.0 + np.exp(3.0 * price_gap))
                 score = 0.45 * score + 0.55 * float(price_affinity)
@@ -243,13 +295,13 @@ class RevenueAgent:
         self,
         item_id,
         user_description: str,
-        item_description: Optional[str] = None,
         user_profile: Optional[Dict[str, float]] = None,
     ) -> RevenueSignal:
         normalized_revenue = self.revenue_profile.normalized(item_id)
         raw_revenue = self.revenue_profile.raw(item_id)
         acceptance = self.user_acceptance(user_description, item_id, user_profile)
-        # 这里的 risk 是运行时解释结果，不是预处理阶段写死的字段。
+        # Risk is interpreted at runtime from behavior evidence instead of being
+        # precomputed as a static item attribute.
         base_risk = self.revenue_profile.behavior_risk(item_id)
         contextual_risk = base_risk * (1.0 + self.risk_penalty * (1.0 - acceptance))
         contextual_risk = max(0.0, min(1.0, contextual_risk))
@@ -268,10 +320,9 @@ class RevenueAgent:
         self,
         item_id,
         user_description: str,
-        item_description: Optional[str] = None,
         user_profile: Optional[Dict[str, float]] = None,
     ) -> str:
-        signal = self.score_candidate(item_id, user_description, item_description, user_profile)
+        signal = self.score_candidate(item_id, user_description, user_profile)
         return (
             "Revenue-aware platform signal: "
             f"base_revenue={signal.raw_revenue:.2f}, "

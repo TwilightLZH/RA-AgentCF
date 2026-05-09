@@ -9,10 +9,19 @@ debug: False
 
 ra_enabled: True
 
-# Trade-off between AgentCF preference ranking and revenue-aware utility.
-# 0.0 means pure AgentCF preference. Larger values strengthen runtime revenue/behavior signals.
-ra_alpha: 0.25
-ra_fusion_mode: multiplicative
+# Trade-off between AgentCF preference ranking and revenue-aware commercial signals.
+# 0.0 means pure AgentCF preference. Larger values strengthen revenue-aware reranking.
+ra_alpha: 0.7
+
+# Options:
+# multiplicative: conservative utility multiplier.
+# linear / linear_utility: preference-utility weighted sum.
+# linear_revenue: preference-revenue weighted sum.
+# constrained_revenue: revenue-oriented rerank inside a preference gate.
+# constrained_utility: utility-oriented rerank inside a preference gate.
+ra_fusion_mode: constrained_utility
+ra_preference_threshold: 0.35
+ra_low_preference_penalty: 0.8
 
 # Expose revenue-aware signals to the LLM prompt, not only to post-processing.
 ra_inject_revenue_context: True
@@ -27,6 +36,12 @@ ra_revenue_min: 1.0
 ra_revenue_max: 10.0
 ra_popularity_weight: 0.25
 ra_revenue_risk_penalty: 0.20
+
+# Revenue normalization for long-tailed e-commerce prices.
+# Options: minmax, percentile, log, log_percentile.
+# log_percentile clips extreme top prices by percentile, then applies log1p.
+ra_revenue_normalization: log_percentile
+ra_revenue_percentile: 98
 
 user_prompt_system_role: "You are an online shopping user.\n Here is your previous self-introduction, describing your product preferences, dislikes, price tolerance, and shopping habits:\n '$user_description'."
 system_prompt_template: "You are an online shopping user. Here is your self-introduction, expressing your preferences, dislikes, and price tolerance: '$user_description'.\n\nNow you are choosing one product from two candidate products. Their features are listed below:\n$list_of_item_description.\n\nPlease select the product that best fits your preferences and is most likely to be purchased. You must copy the selected product title exactly as it appears in the candidate list.\n\nOutput exactly two lines and no extra text:\nChoice: <exact selected product title>\nExplanation: <one concise reason for choosing it and rejecting the other product>"
