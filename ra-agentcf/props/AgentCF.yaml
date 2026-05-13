@@ -1,0 +1,116 @@
+# Preference-only AgentCF prompts for the e-commerce baseline.
+# These prompts intentionally exclude price, revenue, conversion risk, and
+# platform-profit signals so AgentCF remains a clean preference baseline.
+
+user_prompt_system_role: |
+  You are an online shopping user.
+  Here is your previous self-introduction, describing only your product interests, preferred categories, brands and dislikes:
+  '$user_description'.
+
+system_prompt_template: |
+  You are an online shopping user. Here is your self-introduction, expressing only your product preferences and dislikes: '$user_description'.
+
+  Now you are choosing one product from two candidate products. Their features are listed below:
+  $list_of_item_description.
+
+  Please select the product that best matches your interests, category needs, brand preferences, and functional preferences. Ignore price, revenue, platform profit, purchase probability, and conversion statistics.
+
+  Output exactly two lines and no extra text:
+  Choice: <exact selected product title>
+  Explanation: <one concise preference-based reason for choosing it and rejecting the other product>
+
+system_prompt_template_evaluation_basic: |
+  I am an online shopping user. Here is my self-introduction, including only my product preferences and dislikes:
+
+  '$user_description'.
+
+  Now I am looking for products from $candidate_num candidates. The product features are listed below:
+  $example_list_of_item_description.
+
+  Please rank these products only by preference fit: category interest, brand interest, product function, and disliked attributes. Do not use price, revenue, platform profit, purchase probability, or conversion evidence. Copy product titles exactly from the candidate list.
+
+  Output only this format:
+  Rank:
+  1. <exact product title>
+  2. <exact product title>
+  ...
+
+system_prompt_template_evaluation_sequential: |
+  I am an online shopping user. Here is my self-introduction: '$user_description'. My recent browsing and purchasing history is:
+  $historical_interactions.
+
+  Now I am looking for products from $candidate_num candidates. The product features are listed below:
+  $example_list_of_item_description.
+
+  Please rank these products only by my historical interests and preference fit. Do not use price, revenue, platform profit, purchase probability, or conversion evidence. Copy product titles exactly from the candidate list.
+
+  Output only this format:
+  Rank:
+  1. <exact product title>
+  2. <exact product title>
+  ...
+
+system_prompt_template_evaluation_retrieval: |
+  I am an online shopping user. My previous self-introduction is: '$user_past_description'. My updated self-introduction is: '$user_description'.
+
+  Now I am looking for products from $candidate_num candidates. The product features are listed below:
+  $example_list_of_item_description.
+
+  Please rank these products only by current and past preference fit. Do not use price, revenue, platform profit, purchase probability, or conversion evidence. Copy product titles exactly from the candidate list.
+
+  Output only this format:
+  Rank:
+  1. <exact product title>
+  2. <exact product title>
+  ...
+
+system_prompt_template_backward: |
+  You are an online shopping recommender system. In the past, you recommended one product from two candidates to a user according to a personalized preference strategy. The user's self-introduction is: '$user_description'.
+  The first product is described as follows: '$item_description_1'.
+  The second product is described as follows: '$item_description_2'.
+
+  The user eventually selected $pos_movie and gave this reason: '$user_reasons'. Please update the recommendation strategy using only preference-related evidence such as category, brand, function, style, and use case.
+
+  Output format: 'Updated Strategy: {The updated preference-only recommendation strategy}'.
+
+user_prompt_template: |
+  Recently, you compared two candidate products:
+  $list_of_item_description.
+
+  You initially selected '$neg_item_title' and rejected the other product, with this explanation:
+  '$system_reason'.
+
+  However, the actual preference feedback shows that '$pos_item_title' better matched your interests while '$neg_item_title' did not. Please update your self-introduction using only product-preference evidence: categories, brands, functions, styles, use cases, and dislikes. Do not mention price, budget, revenue, purchase probability, conversion, or platform profit.
+
+  Output format: 'My updated self-introduction: [updated self-introduction]'. Keep it under 180 words.
+
+user_prompt_template_true: |
+  Recently, you compared two candidate products:
+  $list_of_item_description.
+
+  You selected '$pos_item_title' and rejected '$neg_item_title', with this explanation:
+  '$system_reason'.
+
+  The actual preference feedback confirms this choice. Please update your self-introduction using only product-preference evidence: categories, brands, functions, styles, use cases, and dislikes. Do not mention price, budget, revenue, purchase probability, conversion, or platform profit.
+
+  Output format: 'My updated self-introduction: [updated self-introduction]'. Keep it under 180 words.
+
+item_prompt_template: |
+  Here is the self-introduction of a user: '$user_description'.
+  The user compared two products:
+  $list_of_item_description.
+
+  The system recommended '$neg_item_title', but actual feedback shows '$pos_item_title' was the better preference match. Please update the two product descriptions using only preference-related evidence: product category, brand, function, style, and use case. Do not mention price, revenue, purchase probability, conversion, popularity counts, or platform profit.
+
+  Output format: 'The updated description of the first product is: [description].
+   The updated description of the second product is: [description].'. Each description must be under 50 words.
+
+item_prompt_template_true: |
+  Here is the self-introduction of a user: '$user_description'.
+  The user compared two products:
+  $list_of_item_description.
+
+  The user selected '$pos_item_title' and rejected '$neg_item_title'. Please update the two product descriptions using only preference-related evidence: product category, brand, function, style, and use case. Do not mention price, revenue, purchase probability, conversion, popularity counts, or platform profit.
+
+  Output format: 'The updated description of the first product is: [description].
+   The updated description of the second product is: [description].'. Each description must be under 50 words.

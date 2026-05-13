@@ -219,6 +219,7 @@ ra_revenue_percentile: 98
 agentcf/props/overall.yaml
 agentcf/props/AgentCF.yaml
 ra-agentcf/props/RAAgentCF.yaml
+ra-agentcf/props/AgentCF.yaml     # only when running -m AgentCF
 ra-agentcf/props/{dataset}.yaml
 ```
 

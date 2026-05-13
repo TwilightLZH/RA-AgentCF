@@ -11,7 +11,7 @@ ra_enabled: True
 
 # Trade-off between AgentCF preference ranking and revenue-aware commercial signals.
 # 0.0 means pure AgentCF preference. Larger values strengthen revenue-aware reranking.
-ra_alpha: 0.7
+ra_alpha: 0.0
 
 # Options:
 # multiplicative: conservative utility multiplier.
@@ -43,11 +43,95 @@ ra_revenue_risk_penalty: 0.20
 ra_revenue_normalization: log_percentile
 ra_revenue_percentile: 98
 
-user_prompt_system_role: "You are an online shopping user.\n Here is your previous self-introduction, describing your product preferences, dislikes, price tolerance, and shopping habits:\n '$user_description'."
-system_prompt_template: "You are an online shopping user. Here is your self-introduction, expressing your preferences, dislikes, and price tolerance: '$user_description'.\n\nNow you are choosing one product from two candidate products. Their features are listed below:\n$list_of_item_description.\n\nPlease select the product that best fits your preferences and is most likely to be purchased. You must copy the selected product title exactly as it appears in the candidate list.\n\nOutput exactly two lines and no extra text:\nChoice: <exact selected product title>\nExplanation: <one concise reason for choosing it and rejecting the other product>"
-system_prompt_template_evaluation_basic: "I am an online shopping user. Here is my self-introduction, including my preferences, dislikes, and price tolerance:\n\n'$user_description'.\n\nNow I am looking for products from $candidate_num candidates. The product features are listed below:\n$example_list_of_item_description.\n\nPlease rank these products by considering preference fit first, then purchase likelihood and revenue-aware platform signals. Do not recommend an expensive product if it is not a plausible fit. Copy product titles exactly from the candidate list.\n\nOutput only this format:\nRank:\n1. <exact product title>\n2. <exact product title>\n..."
-system_prompt_template_evaluation_sequential: "I am an online shopping user. Here is my self-introduction: '$user_description'. My recent browsing and purchasing history is:\n$historical_interactions.\n\nNow I am looking for products from $candidate_num candidates. The product features are listed below:\n$example_list_of_item_description.\n\nPlease rank these products by considering my historical interests, purchase likelihood, price tolerance, and revenue-aware platform signals. Copy product titles exactly from the candidate list.\n\nOutput only this format:\nRank:\n1. <exact product title>\n2. <exact product title>\n..."
-system_prompt_template_evaluation_retrieval: "I am an online shopping user. My previous self-introduction is: '$user_past_description'. My updated self-introduction is: '$user_description'.\n\nNow I am looking for products from $candidate_num candidates. The product features are listed below:\n$example_list_of_item_description.\n\nPlease rank these products by considering current preferences first, then past preferences, purchase likelihood, and revenue-aware platform signals. Copy product titles exactly from the candidate list.\n\nOutput only this format:\nRank:\n1. <exact product title>\n2. <exact product title>\n..."
+user_prompt_system_role: |
+  You are an online shopping user.
+  Here is your previous self-introduction, describing your product preferences, dislikes, price tolerance, and shopping habits:
+  '$user_description'.
+
+system_prompt_template: |
+  You are an online shopping user. Here is your self-introduction, expressing your preferences, dislikes, and price tolerance: '$user_description'.
+
+  Now you are choosing one product from two candidate products. Their features and commercial evidence are listed below:
+  $list_of_item_description.
+
+  Commercial evidence guide:
+  - base_revenue is the original estimated revenue or price. Higher means larger platform revenue if purchased.
+  - normalized_revenue rescales base_revenue to 0-1 after long-tail normalization.
+  - user_acceptance estimates whether this user would plausibly accept the product, including preference and price tolerance.
+  - conversion_confidence estimates purchase confidence from behavioral evidence.
+  - expected_commercial_utility combines normalized_revenue, user_acceptance, and conversion_confidence.
+
+  Goal: select the product with the higher expected platform revenue, but only if it remains a plausible fit for the user's preferences and price tolerance. Do not choose a high-revenue item that the user is unlikely to accept.
+
+  Output exactly two lines and no extra text:
+  Choice: <exact selected product title>
+  Explanation: <one concise reason balancing user fit and expected platform revenue>
+
+system_prompt_template_evaluation_basic: |
+  I am an online shopping user. Here is my self-introduction, including my preferences, dislikes, and price tolerance:
+
+  '$user_description'.
+
+  Now I am looking for products from $candidate_num candidates. The product features and commercial evidence are listed below:
+  $example_list_of_item_description.
+
+  Commercial evidence guide:
+  - base_revenue is the original estimated revenue or price. Higher means larger platform revenue if purchased.
+  - normalized_revenue rescales base_revenue to 0-1 after long-tail normalization.
+  - user_acceptance estimates whether I would plausibly accept the product, including preference and price tolerance.
+  - conversion_confidence estimates purchase confidence from behavioral evidence.
+  - expected_commercial_utility combines normalized_revenue, user_acceptance, and conversion_confidence.
+
+  Please rank these products to maximize expected platform revenue under a user-acceptance constraint. First discard products that are clearly implausible for my preferences or price tolerance. Among plausible products, prefer candidates with stronger expected commercial return. Copy product titles exactly from the candidate list.
+
+  Output only this format:
+  Rank:
+  1. <exact product title>
+  2. <exact product title>
+  ...
+
+system_prompt_template_evaluation_sequential: |
+  I am an online shopping user. Here is my self-introduction: '$user_description'. My recent browsing and purchasing history is:
+  $historical_interactions.
+
+  Now I am looking for products from $candidate_num candidates. The product features and commercial evidence are listed below:
+  $example_list_of_item_description.
+
+  Commercial evidence guide:
+  - base_revenue is the original estimated revenue or price. Higher means larger platform revenue if purchased.
+  - normalized_revenue rescales base_revenue to 0-1 after long-tail normalization.
+  - user_acceptance estimates whether I would plausibly accept the product, including preference and price tolerance.
+  - conversion_confidence estimates purchase confidence from behavioral evidence.
+  - expected_commercial_utility combines normalized_revenue, user_acceptance, and conversion_confidence.
+
+  Please rank these products to maximize expected platform revenue under a user-acceptance constraint. Use my history to judge product fit, then prioritize stronger expected commercial return among plausible candidates. Copy product titles exactly from the candidate list.
+
+  Output only this format:
+  Rank:
+  1. <exact product title>
+  2. <exact product title>
+  ...
+
+system_prompt_template_evaluation_retrieval: |
+  I am an online shopping user. My previous self-introduction is: '$user_past_description'. My updated self-introduction is: '$user_description'.
+
+  Now I am looking for products from $candidate_num candidates. The product features and commercial evidence are listed below:
+  $example_list_of_item_description.
+
+  Commercial evidence guide:
+  - base_revenue is the original estimated revenue or price. Higher means larger platform revenue if purchased.
+  - normalized_revenue rescales base_revenue to 0-1 after long-tail normalization.
+  - user_acceptance estimates whether I would plausibly accept the product, including preference and price tolerance.
+  - conversion_confidence estimates purchase confidence from behavioral evidence.
+  - expected_commercial_utility combines normalized_revenue, user_acceptance, and conversion_confidence.
+
+  Please rank these products to maximize expected platform revenue under a user-acceptance constraint. Use my current and past preferences to judge plausibility, then prioritize stronger expected commercial return among plausible candidates. Copy product titles exactly from the candidate list.
+
+  Output only this format:
+  Rank:
+  1. <exact product title>
+  2. <exact product title>
+  ...
 user_prompt_template: "Recently, you compared two candidate products:\n$list_of_item_description.\n\nYou initially selected '$neg_item_title' and rejected the other product, with this explanation:\n'$system_reason'.\n\nHowever, the actual purchase feedback shows that '$pos_item_title' better matched your needs while '$neg_item_title' did not convert. Please update your self-introduction by incorporating the preference, dislike, price-related, and conversion evidence from this interaction. Use readable product categories such as 'kitchen refrigerator' or 'tool light' instead of raw category paths when possible.\n\nOutput format: 'My updated self-introduction: [updated self-introduction]'. Keep it under 180 words."
 user_prompt_template_true: "Recently, you compared two candidate products:\n$list_of_item_description.\n\nYou selected '$pos_item_title' and rejected '$neg_item_title', with this explanation:\n'$system_reason'.\n\nThe actual purchase feedback confirms this choice. Please update your self-introduction by incorporating the preference, dislike, price-related, and conversion evidence from this interaction. Use readable product categories such as 'kitchen refrigerator' or 'tool light' instead of raw category paths when possible.\n\nOutput format: 'My updated self-introduction: [updated self-introduction]'. Keep it under 180 words."
 item_prompt_template: "Here is the self-introduction of a user: '$user_description'.\nThe user compared two products:\n$list_of_item_description.\n\nThe system recommended '$neg_item_title', but actual feedback shows '$pos_item_title' was the better purchase candidate. Please update the descriptions of the two products to better reflect the preference and conversion evidence. Write natural e-commerce product descriptions; avoid raw category paths like 'appliances.kitchen.refrigerators' when a readable phrase such as 'kitchen refrigerator' is available. Keep the product id only if it helps distinguish similar products.\n\nOutput format: 'The updated description of the first product is: [description]. \n The updated description of the second product is: [description].'. Each description must be under 50 words."
