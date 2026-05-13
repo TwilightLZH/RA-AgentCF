@@ -324,12 +324,10 @@ class RevenueAgent:
     ) -> str:
         signal = self.score_candidate(item_id, user_description, user_profile)
         return (
-            "Revenue-aware platform signal: "
+            "Commercial evidence for revenue-aware ranking: "
             f"base_revenue={signal.raw_revenue:.2f}, "
             f"normalized_revenue={signal.normalized_revenue:.3f}, "
             f"user_acceptance={signal.user_acceptance:.3f}, "
-            f"conversion_risk={signal.risk:.3f}, "
             f"conversion_confidence={signal.conversion_confidence:.3f}, "
-            f"commercial_utility={signal.utility:.3f}. "
-            "Use revenue only after checking that the product remains a plausible preference fit."
+            f"expected_commercial_utility={signal.utility:.3f}."
         )

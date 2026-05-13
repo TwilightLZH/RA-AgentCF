@@ -50,8 +50,11 @@ def run_baseline(model_name, dataset_name, **kwargs):
         os.path.join(AGENTCF_ROOT, "props", "overall.yaml"),
         os.path.join(AGENTCF_ROOT, "props", "AgentCF.yaml"),
         os.path.join(CURRENT_DIR, "props", "RAAgentCF.yaml"),
-        dataset_props,
     ]
+    agentcf_baseline_props = os.path.join(CURRENT_DIR, "props", "AgentCF.yaml")
+    if model_name == "AgentCF" and os.path.exists(agentcf_baseline_props):
+        props.append(agentcf_baseline_props)
+    props.append(dataset_props)
     config_overrides = dict(kwargs)
     if dataset_props == ra_dataset_props:
         dataset_dir = os.path.join(CURRENT_DIR, "dataset", dataset_name)
