@@ -43,7 +43,6 @@ where:
 - `user_acceptance` estimates whether the user can plausibly accept the item price and positioning.
 - `conversion_confidence = 1 - conversion_risk`, derived from item view/purchase behavior relative to the global conversion baseline.
 
-The default reranking mode is `constrained_utility`: optimize utility inside a preference gate. Items with low AgentCF preference scores are penalized, so the model does not blindly recommend commercially attractive but irrelevant products.
 
 ## Environment
 
@@ -83,19 +82,6 @@ ra-agentcf/dataset/ECommerceRASmall/ECommerceRASmall.revenue.csv
 ra-agentcf/dataset/ECommerceRASmall/ECommerceRASmall.item_behavior.csv
 ra-agentcf/dataset/ECommerceRASmall/ECommerceRASmall.user_profile.csv
 ```
-
-Preprocessing parameters:
-
-| Parameter | Meaning |
-| --- | --- |
-| `--input` | Source e-commerce CSV path. |
-| `--dataset` | Output dataset name. Files are written to `ra-agentcf/dataset/{dataset}/`. |
-| `--min-purchases` | Minimum generated purchase examples required per user. At least 3 is needed for train/valid/test split. |
-| `--candidate-size` | Number of sampled non-positive candidates written to `{dataset}.random`. |
-| `--max-users` | Optional cap on selected users. Users with more purchase examples are preferred. |
-| `--max-train-examples-per-user` | Optional cap on train examples per user. Newer train examples are kept. |
-| `--max-history-items` | Optional cap on item history length per example. |
-| `--seed` | Random seed for candidate sampling. |
 
 ## Smoke Test
 
@@ -156,75 +142,6 @@ Run the preference-only AgentCF baseline on the same dataset:
   --show_progress=True
 ```
 
-## Runtime Parameters
-
-These parameters are passed through `ra-agentcf/run.py` to RecBole and AgentCF configs.
-
-| Parameter | Meaning |
-| --- | --- |
-| `-m`, `--model` | Model name. Use `RAAgentCF` for revenue-aware reranking or `AgentCF` for the preference-only baseline. |
-| `-d`, `--dataset` | Dataset name. Use `ECommerceRASmall` for the small experiment set. |
-| `--debug` | If `True`, prints full config and initialization logs. If `False`, hides verbose config dumps while keeping progress bars and final metrics. |
-| `--test_only` | If `True`, skip training/memory update and run evaluation only. |
-| `--loaded` | If `True`, load saved UserAgent/ItemAgent memory from `saved_idx`. |
-| `--saved` | If `True`, save UserAgent/ItemAgent memory after the run. |
-| `--saved_idx` | Saved memory index to load when `--loaded=True`. |
-| `--epochs` | Number of AgentCF memory-update epochs. |
-| `--train_batch_size` | Training batch size. Smaller values reduce API burst size but increase iteration count. |
-| `--eval_batch_size` | Evaluation batch size. |
-| `--max_his_len` | Maximum number of historical items included in prompts. |
-| `--MAX_ITEM_LIST_LENGTH` | Maximum item sequence length used by RecBole. |
-| `--recall_budget` | Number of ranked candidate items parsed/scored during evaluation. Usually set to candidate top-K size. |
-| `--chat_api_batch` | Batch size for chat-completion API calls. |
-| `--api_batch` | Batch size for non-chat LLM/embedding API calls. |
-| `--show_progress` | If `True`, show training and evaluation progress bars. |
-| `--debug_eval_batches` | Optional evaluation shortcut. For example, `--debug_eval_batches=1` stops evaluation after one batch. |
-
-## RA-AgentCF Config Parameters
-
-Main revenue-aware settings are in `ra-agentcf/props/RAAgentCF.yaml`.
-
-| Config | Meaning |
-| --- | --- |
-| `ra_enabled` | Master switch for revenue-aware prompt injection and reranking. |
-| `ra_alpha` | Trade-off between AgentCF preference score and commercial signal. Larger values make reranking more commercial-oriented. |
-| `ra_fusion_mode` | Reranking mode. Supported values include `multiplicative`, `linear_utility`, `linear_revenue`, `constrained_revenue`, and `constrained_utility`. |
-| `ra_preference_threshold` | Preference gate threshold for constrained modes. Candidates below this normalized preference score are penalized. |
-| `ra_low_preference_penalty` | Multiplicative penalty applied to candidates below the preference threshold. |
-| `ra_inject_revenue_context` | If `True`, append revenue-aware platform signals to candidate descriptions during evaluation. |
-| `ra_revenue_source` | `file` for dataset revenue CSV, or `synthetic` for stable generated revenue. |
-| `ra_revenue_file` | Path to `{dataset}.revenue.csv`. Automatically set by `run.py` for RA datasets. |
-| `ra_item_behavior_file` | Path to `{dataset}.item_behavior.csv`. Automatically set by `run.py` for RA datasets. |
-| `ra_user_profile_file` | Path to `{dataset}.user_profile.csv`. Automatically set by `run.py` for RA datasets. |
-| `ra_revenue_risk_penalty` | Controls how much low user acceptance amplifies conversion risk. |
-| `ra_revenue_normalization` | Revenue normalization method: `minmax`, `percentile`, `log`, or `log_percentile`. |
-| `ra_revenue_percentile` | Percentile cap used by percentile-based revenue normalization. |
-
-Recommended utility-oriented setting:
-
-```yaml
-ra_fusion_mode: constrained_utility
-ra_alpha: 0.7
-ra_preference_threshold: 0.35
-ra_low_preference_penalty: 0.8
-ra_revenue_normalization: log_percentile
-ra_revenue_percentile: 98
-```
-
-## Config Loading Order
-
-`ra-agentcf/run.py` loads configs in this order:
-
-```text
-agentcf/props/overall.yaml
-agentcf/props/AgentCF.yaml
-ra-agentcf/props/RAAgentCF.yaml
-ra-agentcf/props/AgentCF.yaml     # only when running -m AgentCF
-ra-agentcf/props/{dataset}.yaml
-```
-
-Command-line overrides have the highest priority.
-
 ## Metrics
 
 The final output includes standard ranking metrics and revenue-aware metrics:
@@ -252,11 +169,3 @@ ra-agentcf/dataset/{dataset}/saved/
 With `--loaded=False`, a run starts from initial memory even if previous record folders exist. The record index only increases to avoid overwriting old logs.
 
 With `--loaded=True --saved_idx=N`, the run loads saved memory from index `N`.
-
-## Original AgentCF README
-
-The original upstream AgentCF README is preserved at:
-
-```text
-README-AgentCF-original.md
-```
